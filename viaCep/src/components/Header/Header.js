@@ -1,4 +1,4 @@
-import { ContainerHeader, MainTitle, SafeContainer } from "./style";
+import { ContainerHeader, MainTitle, SafeContainer } from "./StyleHeader";
 
 export function Header(){
     return(

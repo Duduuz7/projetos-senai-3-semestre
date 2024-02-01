@@ -2,19 +2,22 @@ import styled from "styled-components"
 
 export const ContainerHeader = styled.View`
     height: 20%;
-    width: 100%;
     background-color: #FECC2B;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    elevation: 22px;
+    border-radius: 0px 0px 22px 22px;
+    elevation: 10px; 
     justify-content: center;
-    /* margin-top: 671px;   */
+    align-items: center;
+    
+   /* box-shadow android */
+    /* shadow-color: 'black';
+    shadow-opacity: 0.26;
+    shadow-offset: 2px 8px;
+    shadow-radius: 10px;  */
+   
 `
 
 export const SafeContainer = styled.SafeAreaView`
-    background-color: #FECC2B;
-    align-items: center;
-    padding-top: 18px; 
+    margin-top: 30px; 
 `
 
 export const MainTitle = styled.Text`
