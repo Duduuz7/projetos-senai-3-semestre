@@ -1,0 +1,20 @@
+{
+    "cep": [
+        {
+            "id": "03268020",
+            "cep": "03268020",
+            "logradouro": "Rua Amatari",
+            "bairro": "Vila Tolstói",
+            "localidade": "São Paulo",
+            "uf": "SP"
+        },
+        {
+            "id": "2",
+            "cep": "03268021",
+            "logradouro": "Rua Amataro",
+            "bairro": "Vila la",
+            "localidade": "São Paulo",
+            "uf": "SP"
+        }
+    ]
+}

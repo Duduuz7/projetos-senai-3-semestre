@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const InputText = styled.TextInput`
 
@@ -9,4 +9,8 @@ border-radius: 10px;
 padding: 20px;
 margin-top: 10px;
 font-size: 18px;
-background-color: #F6F6F6; `
+
+
+${props => props.editable && css`
+background-color: #F6F6F6; 
+`}`
