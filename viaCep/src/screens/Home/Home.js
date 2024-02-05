@@ -15,13 +15,13 @@ export function Home() {
 
     useEffect(() => {
 
-        const Get = async () => {
+        const getCep = async () => {
             if (cep !== "" && cep.length === 8) {
                 try {
                     const response = await api.get(`${cep}/json/`);
 
                     if (response.data) {
-                        
+
                         setLogradouro(response.data.logradouro);
                         setBairro(response.data.bairro);
                         setCidade(response.data.localidade);
@@ -46,7 +46,7 @@ export function Home() {
             }
         };
 
-        Get();
+        getCep();
 
     }, [cep]);
 
