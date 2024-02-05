@@ -2,6 +2,7 @@ import { ContainerForm, ScrollForm, ViewEstadoUf } from "./StyleHome";
 import { BoxInput } from "../../components/BoxInput/BoxInput";
 import { useEffect, useState } from "react";
 import api from "../../services/Services";
+import axios from "axios";
 
 export function Home() {
 
@@ -15,32 +16,40 @@ export function Home() {
     useEffect(() => {
 
         const Get = async () => {
-            try {
+            if (cep !== "" && cep.length === 8) {
+                try {
+                    const response = await api.get(`${cep}/json/`);
 
-                if (cep != "" && cep.length === 8) {
-                    const response = await api.get(`${cep}`);
+                    if (response.data) {
+                        
+                        setLogradouro(response.data.logradouro);
+                        setBairro(response.data.bairro);
+                        setCidade(response.data.localidade);
+                        setUf(response.data.uf);
 
-                    if (response.error) {
-                        alert("Verifique o CEP !!!")
-                        return
+                        const estado = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${response.data.uf}
+                        
+                        `)
+
+                        setEstado(estado.data.nome);
+
+                    } else {
+
+                        alert("Verifique o CEP digitado !!!");
+
                     }
-                    
+                } catch (error) {
 
-                    setLogradouro(response.data.logradouro);
-                    setBairro(response.data.bairro);
-                    setCidade(response.data.localidade);
-                    setEstado(response.data.uf);
-                    setUf(response.data.uf);
+                    console.log("Ocorreu um erro ao buscar o CEP", error);
 
                 }
-            } catch (error) {
-                console.log("Erro.");
-                console.log(error);
             }
-        }
+        };
 
-        Get()
+        Get();
+
     }, [cep]);
+
 
     return (
 
