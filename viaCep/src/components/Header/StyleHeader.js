@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ContainerHeader = styled.View`
     height: 20%;
-    background-color: #FECC2B;
+    background-color: #FF99CC;
     border-radius: 0px 0px 22px 22px;
     elevation: 10px; 
     justify-content: center;
