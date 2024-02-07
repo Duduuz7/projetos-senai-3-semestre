@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 
 export const NormalButton= styled.TouchableOpacity`
+    margin-top: 32px;
     border-radius: 8px;
     width: 80%;
     background-color: #496BBA;
@@ -13,8 +14,9 @@ export const NormalButton= styled.TouchableOpacity`
     `
 
 export const GoogleButton= styled(NormalButton)`
-    flex-direction: row;
-    justify-content: space-evenly;
+    margin-top: 20px; 
+    gap: 27px;
+    justify-content: center;
     flex-direction: row;
     background-color: #fff;
 `
