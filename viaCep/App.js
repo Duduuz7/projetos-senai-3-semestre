@@ -28,7 +28,7 @@ export default function App() {
 
       <Header/>
 
-      <Hom  e/>
+      <Home/>
 
     </Container>
   );

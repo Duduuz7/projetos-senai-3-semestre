@@ -3,11 +3,11 @@ import { TextMedium } from "./StyleTextMedium"
 import { ViewBoxMedium } from "../Container/StyleContainer"
 
 
-export const LinkMedium = ({ textLink, url }) => {
+export const LinkMedium = ({ textLink, onPress }) => {
 
     return (
         <ViewBoxMedium>
-            <TextMedium onPress={() => { Linking.openURL(`${url}`) }}>
+            <TextMedium onPress={onPress}>
                 {textLink}
             </TextMedium>
         </ViewBoxMedium>

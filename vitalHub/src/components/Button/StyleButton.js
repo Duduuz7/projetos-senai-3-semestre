@@ -21,6 +21,14 @@ export const GoogleButton= styled(NormalButton)`
     background-color: #fff;
 `
 
+export const LargeButton= styled(NormalButton)`
+    width: 91%;
+    height: 52px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+
+`
+
 
 
 // button: {

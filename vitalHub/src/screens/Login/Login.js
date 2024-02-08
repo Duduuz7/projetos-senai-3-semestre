@@ -8,9 +8,9 @@ import { LinkMedium } from "../../components/TextMedium/TextMedium"
 import { GoogleButton, NormalButton } from "../../components/Button/StyleButton"
 import { LinkAccount } from "../../components/Link/Link"
 
-import { AntDesign } from '@expo/vector-icons';
+import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button"
 
-export const Login = () => {
+export const Login = ({navigation}) => {
     return (
 
         <Container>
@@ -30,18 +30,13 @@ export const Login = () => {
                 secureTextEntry={true}
             />
 
-            <LinkMedium textLink={"Esqueceu sua senha ?"} url="" />
+            <LinkMedium textLink={"Esqueceu sua senha ?"} onPress={() => navigation.navigate("ForgotPassword")} />
 
-            <NormalButton>
-                <ButtonText>Entrar</ButtonText>
-            </NormalButton>
+            <ButtonNormal text={"Entrar"}/>
 
-            <GoogleButton>
-                <AntDesign name="google" size={18} color="#496BBA" />
-                <ButtonTextGoogle>Entrar com Google</ButtonTextGoogle>
-            </GoogleButton>
+            <ButtonGoogle text={"Entrar com Google"}/>
 
-            <LinkAccount />
+            <LinkAccount onPress={() => navigation.navigate("CreateAccount")}/>
 
         </Container>
     )

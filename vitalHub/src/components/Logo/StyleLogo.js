@@ -15,3 +15,10 @@ export const Close = styled.Image`
 margin-right: 340px;
 margin-top: 5px;
 `
+
+export const ImagemPerfilPaciente = styled.Image`
+ width: 100%;
+ height: 308px;
+ margin-bottom: 27px
+`
+

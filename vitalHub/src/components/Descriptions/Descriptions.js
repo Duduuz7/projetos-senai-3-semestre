@@ -19,3 +19,17 @@ export const EmailDescription = () => {
     )
 
 }
+
+
+export const CodeResend = ({
+    text,
+    onPress
+}) => {
+
+    return(
+
+        <ResendCode onPress={onPress}>{text}</ResendCode>
+
+    )
+
+}

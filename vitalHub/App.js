@@ -6,10 +6,11 @@ import { Login } from './src/screens/Login/Login';
 import { ForgotPassword } from './src/screens/ForgotPassword/ForgotPassword';
 
 import { useFonts, MontserratAlternates_500Medium, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
 import { CheckEmail } from './src/screens/CheckEmail/ChekEmail';
 import { RedefinePassword } from './src/screens/RedefinePassword/RedefinePassword';
 import { CreateAccount } from './src/screens/CreateAccount/CreateAccount';
+import { PatientProfile } from './src/screens/PatientProfile/PatientProfile';
 
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +23,8 @@ export default function App() {
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
     MontserratAlternates_700Bold,
-    Quicksand_500Medium
+    Quicksand_500Medium,
+    Quicksand_600SemiBold
   });
 
   if (!fontsLoaded && !fontError) {
@@ -75,6 +77,12 @@ export default function App() {
           name="CreateAccount"
           component={CreateAccount}
           options={{ title: 'CreateAccount' }}
+        />
+
+        <Stack.Screen
+          name="PatientProfile"
+          component={PatientProfile}
+          options={{ title: 'PatientProfile' }}
         />
 
       </Stack.Navigator>

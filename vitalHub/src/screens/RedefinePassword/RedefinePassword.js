@@ -1,3 +1,4 @@
+import { ButtonNormal } from '../../components/Button/Button'
 import { NormalButton } from '../../components/Button/StyleButton'
 import { ButtonText } from '../../components/ButtonText/StyleButtonText'
 import { Container } from '../../components/Container/StyleContainer'
@@ -32,10 +33,8 @@ export const RedefinePassword = () => {
                 secureTextEntry={true}
             />
 
-            <NormalButton>
-                <ButtonText>Confirmar nova senha</ButtonText>
-            </NormalButton>
-
+            <ButtonNormal text={"Confirmar nova senha"}/>
+            
         </Container>
 
     )

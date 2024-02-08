@@ -9,6 +9,7 @@ export const DescripritionForgot = styled.Text`
     text-align: center;
     margin-top: 2px;
     margin-bottom: 15px;
+    align-self: center;
 `
 
 export const DescripritionEmail = styled.Text`

@@ -1,14 +1,15 @@
+import { ButtonNormal } from "../../components/Button/Button"
 import { NormalButton } from "../../components/Button/StyleButton"
 import { ButtonText } from "../../components/ButtonText/StyleButtonText"
 import { BoxNumeric, Container, ViewBoxCode, ViewBoxMedium } from "../../components/Container/StyleContainer"
-import { EmailDescription, ResendDescription } from "../../components/Descriptions/Descriptions"
+import { CodeResend, EmailDescription, ResendDescription } from "../../components/Descriptions/Descriptions"
 import { ResendCode } from "../../components/Descriptions/StyledDescriptions"
 import { NumericInput } from "../../components/Input/Input"
 import { Close, Logo } from "../../components/Logo/StyleLogo"
 import { Title } from "../../components/Title/StyleTitle"
 
 
-export const CheckEmail = () => {
+export const CheckEmail = ({navigation}) => {
     return (
 
         <Container>
@@ -28,11 +29,9 @@ export const CheckEmail = () => {
                 <NumericInput placeholder={"0"} placeholderTextColor={"#34898F"} />
             </BoxNumeric>
 
-            <NormalButton>
-                <ButtonText>Entrar</ButtonText>
-            </NormalButton>
+            <ButtonNormal text={"Confirmar"} onPress={() => {navigation.navigate("RedefinePassword")}}/>
 
-            <ResendCode>Reenviar Código</ResendCode>
+            <CodeResend text={"Reenviar Código"}/>
 
         </Container>
 

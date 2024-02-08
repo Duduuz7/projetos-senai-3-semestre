@@ -8,10 +8,8 @@ export function Home() {
 
     const [cep, setCep] = useState('');
     const [logradouro, setLogradouro] = useState('');
-    const [bairro, setBairro] = useState('');
     const [cidade, setCidade] = useState('');
-    const [estado, setEstado] = useState('');
-    const [uf, setUf] = useState('');
+
 
     useEffect(() => {
 
@@ -23,15 +21,7 @@ export function Home() {
                     if (response.data) {
 
                         setLogradouro(response.data.logradouro);
-                        setBairro(response.data.bairro);
                         setCidade(response.data.localidade);
-                        setUf(response.data.uf);
-
-                        const estado = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${response.data.uf}
-                        
-                        `)
-
-                        setEstado(estado.data.nome);
 
                     } else {
 

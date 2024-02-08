@@ -1,3 +1,4 @@
+import { ButtonNormal } from "../../components/Button/Button"
 import { NormalButton } from "../../components/Button/StyleButton"
 import { ButtonText } from "../../components/ButtonText/StyleButtonText"
 import { Container } from "../../components/Container/StyleContainer"
@@ -7,13 +8,13 @@ import { Logo, Seta } from "../../components/Logo/StyleLogo"
 import { Title } from "../../components/Title/StyleTitle"
 
 
-export const ForgotPassword = () => {
+export const ForgotPassword = ({navigation}) => {
 
     return (
 
         <Container>
 
-            <Seta source={require('../../assets/Seta.png')}/>
+            <Seta source={require('../../assets/Seta.png')} />
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 
@@ -26,9 +27,7 @@ export const ForgotPassword = () => {
                 placeholderTextColor={'#49B3BA'}
             />
 
-            <NormalButton>
-                <ButtonText>Continuar</ButtonText>
-            </NormalButton>
+            <ButtonNormal text={"Continuar"} onPress={() => navigation.navigate("CheckEmail")}/>
 
 
         </Container>

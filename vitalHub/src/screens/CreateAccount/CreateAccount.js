@@ -1,14 +1,15 @@
+import { ButtonNormal } from '../../components/Button/Button'
 import { NormalButton } from '../../components/Button/StyleButton'
 import { ButtonText } from '../../components/ButtonText/StyleButtonText'
 import { Container } from '../../components/Container/StyleContainer'
 import { DescriptionPassword } from '../../components/Descriptions/Descriptions'
-import { CancelButton } from '../../components/Descriptions/StyledDescriptions'
 import { Input } from '../../components/Input/Input'
+import { Cancel } from '../../components/Link/Link'
 import { Logo } from '../../components/Logo/StyleLogo'
 import { Title } from '../../components/Title/StyleTitle'
 
 
-export const CreateAccount = () => {
+export const CreateAccount = ({ navigation }) => {
 
     return (
 
@@ -35,11 +36,9 @@ export const CreateAccount = () => {
                 secureTextEntry={true}
             />
 
-            <NormalButton>
-                <ButtonText>Cadastrar</ButtonText>
-            </NormalButton>
+            <ButtonNormal text={"Cadastrar"} />
 
-            <CancelButton>Cancelar</CancelButton>
+            <Cancel onPress={() => { navigation.navigate("Login") }} />
 
         </Container>
     )

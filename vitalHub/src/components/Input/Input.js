@@ -1,4 +1,4 @@
-import { InputNumeric, InputText } from "./StyleInput";
+import { InputNumeric, InputProfile, InputText } from "./StyleInput";
 
 export function Input({
     placeholder,
@@ -36,6 +36,28 @@ export function NumericInput({
 }) {
     return(
         <InputNumeric
+        editable={editable}
+        placeholder={placeholder}
+        keyboardType= {keyboardType}
+        placeholderTextColor={placeholderTextColor}
+        maxLength={maxLength}
+        value= {fieldValue}
+        onChangeText={onChangeText}
+        />
+    )
+}
+
+export function ProfileInput({
+    placeholder,
+    fieldValue,
+    onChangeText ,
+    keyboardType,
+    maxLength,
+    placeholderTextColor,
+    editable = true
+}) {
+    return(
+        <InputProfile
         editable={editable}
         placeholder={placeholder}
         keyboardType= {keyboardType}
