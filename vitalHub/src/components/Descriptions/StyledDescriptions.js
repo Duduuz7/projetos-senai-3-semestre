@@ -45,3 +45,9 @@ export const CancelButton = styled(ResendCode)`
     margin-top: 40px;
     margin-left: 40%;
 `
+
+
+export const CancelButtonRecords = styled(CancelButton)`
+    margin-top:25px;
+    margin-bottom: 40px;
+    `

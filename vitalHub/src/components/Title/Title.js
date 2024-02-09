@@ -1,4 +1,4 @@
-import { Title } from "./StyleTitle";
+import { Title, TitleName, TitleWelcome } from "./StyleTitle";
 
 export const Title = ({ textTitle }) => {
 
@@ -6,5 +6,23 @@ export const Title = ({ textTitle }) => {
         <Title>
             {textTitle}
         </Title>
+    )
+}
+
+export const NameTitle= ({ textTitle }) => {
+
+    return (
+        <TitleName>
+            {textTitle}
+        </TitleName>
+    )
+}
+
+export const WelcomeTitle= ({ textTitle }) => {
+
+    return (
+        <TitleWelcome>
+            {textTitle}
+        </TitleWelcome>
     )
 }

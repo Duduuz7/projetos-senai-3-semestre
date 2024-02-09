@@ -9,7 +9,7 @@ import { LargeButton, NormalButton } from "../../components/Button/StyleButton"
 import { ButtonText } from "../../components/ButtonText/StyleButtonText"
 
 import api from "../../services/Services"
-import { ButtonLarge } from "../../components/Button/Button"
+import { BlockedSmallButton, ButtonLarge } from "../../components/Button/Button"
 
 export const PatientProfile = () => {
 
@@ -107,6 +107,8 @@ export const PatientProfile = () => {
                 <ButtonLarge text={"Salvar"} />
 
                 <ButtonLarge text={"Editar"}/>
+
+                <BlockedSmallButton text={"Sair do app"}/>
 
             </Container>
 

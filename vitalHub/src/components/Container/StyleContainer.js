@@ -18,6 +18,7 @@ export const BoxNumeric = styled.SafeAreaView`
 `
 
 export const ScrollContainer = styled.ScrollView`
+    height: 100%;
     width: 100%;
     background-color: #fafafa;
 `
@@ -30,4 +31,12 @@ export const ContainerCepCidade = styled.SafeAreaView`
     justify-content: space-evenly;
     gap: 50px;
     margin-bottom: 35px;
-` 
+`
+
+export const BoxAgeEmail = styled.SafeAreaView`
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2px;
+    margin-right: 35px;
+    margin-left: 35px;
+`

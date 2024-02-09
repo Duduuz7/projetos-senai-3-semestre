@@ -1,5 +1,5 @@
 import { ButtonText, ButtonTextGoogle } from "../ButtonText/StyleButtonText";
-import { GoogleButton, LargeButton, NormalButton } from "./StyleButton";
+import { ButtonBlocked, GoogleButton, LargeButton, NormalButton, SmallButtonBlocked } from "./StyleButton";
 import { AntDesign } from '@expo/vector-icons';
 
 export const ButtonNormal = ({
@@ -36,5 +36,29 @@ export const ButtonLarge = ({
             onPress={onPress}>
                 <ButtonText>{text}</ButtonText>
         </LargeButton>
+    );
+}
+
+export const BlockedButton = ({
+    onPress,
+    text
+}) => {
+    return (
+        <ButtonBlocked
+            onPress={onPress}>
+                <ButtonText>{text}</ButtonText>
+        </ButtonBlocked>
+    );
+}
+
+export const BlockedSmallButton = ({
+    onPress,
+    text
+}) => {
+    return (
+        <SmallButtonBlocked
+            onPress={onPress}>
+                <ButtonText>{text}</ButtonText>
+        </SmallButtonBlocked>
     );
 }

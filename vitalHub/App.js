@@ -11,6 +11,8 @@ import { CheckEmail } from './src/screens/CheckEmail/ChekEmail';
 import { RedefinePassword } from './src/screens/RedefinePassword/RedefinePassword';
 import { CreateAccount } from './src/screens/CreateAccount/CreateAccount';
 import { PatientProfile } from './src/screens/PatientProfile/PatientProfile';
+import { MedicalRecords } from './src/screens/MedicalRecords/MedicalRecords';
+import { DoctorConsultation } from './src/screens/DoctorConsultation/DoctorConsultation';
 
 
 const Stack = createNativeStackNavigator();
@@ -83,6 +85,18 @@ export default function App() {
           name="PatientProfile"
           component={PatientProfile}
           options={{ title: 'PatientProfile' }}
+        />
+
+        <Stack.Screen
+          name="MedicalRecords"
+          component={MedicalRecords}
+          options={{ title: 'MedicalRecords' }}
+        />
+
+        <Stack.Screen
+          name="DoctorConsultation"
+          component={DoctorConsultation}
+          options={{ title: 'DoctorConsultation' }}
         />
 
       </Stack.Navigator>

@@ -1,6 +1,4 @@
 import { ButtonNormal } from "../../components/Button/Button"
-import { NormalButton } from "../../components/Button/StyleButton"
-import { ButtonText } from "../../components/ButtonText/StyleButtonText"
 import { Container } from "../../components/Container/StyleContainer"
 import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
 import { Input } from "../../components/Input/Input"

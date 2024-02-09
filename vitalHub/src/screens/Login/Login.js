@@ -1,11 +1,9 @@
 
 import { Title } from "../../components/Title/StyleTitle"
-import { ButtonText, ButtonTextGoogle } from "../../components/ButtonText/StyleButtonText"
 import { Container } from "../../components/Container/StyleContainer"
 import { Logo } from "../../components/Logo/StyleLogo"
 import { Input } from "../../components/Input/Input"
 import { LinkMedium } from "../../components/TextMedium/TextMedium"
-import { GoogleButton, NormalButton } from "../../components/Button/StyleButton"
 import { LinkAccount } from "../../components/Link/Link"
 
 import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button"

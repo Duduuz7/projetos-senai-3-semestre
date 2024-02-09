@@ -41,8 +41,14 @@ border-radius: 8px;
 margin-top: 10px;
 margin-bottom: 5px; */
 font-size: 16px;
-
-
+`
+export const InputHigh = styled(InputText)`
+    padding-bottom: 82px;
+    height: 125px;
+    width: 90%;
 `
 
+export const InputTextLarge = styled(InputText)`
+    width: 90%;
+`
 

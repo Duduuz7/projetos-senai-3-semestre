@@ -19,6 +19,11 @@ margin-top: 5px;
 export const ImagemPerfilPaciente = styled.Image`
  width: 100%;
  height: 308px;
- margin-bottom: 27px
+ margin-bottom: 27px;
+`
+
+export const ImagemHomeDoctor = styled.Image`
+width: 60px;
+height: 60px;
 `
 
