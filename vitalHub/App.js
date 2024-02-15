@@ -43,7 +43,9 @@ export default function App() {
 
     <NavigationContainer>
 
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown:false
+      }}   >
 
         <Stack.Screen
           name="Navegação"

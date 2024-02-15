@@ -22,8 +22,14 @@ export const ImagemPerfilPaciente = styled.Image`
  margin-bottom: 27px;
 `
 
-export const ImagemHomeDoctor = styled.Image`
+export const ImagemHome = styled.Image`
 width: 60px;
 height: 60px;
+margin-top: 40px;
+margin-left: 9%;
 `
-
+export const IconBell = styled.Image`
+    width: 23px;
+    height: 26px;
+    align-self: center;
+`

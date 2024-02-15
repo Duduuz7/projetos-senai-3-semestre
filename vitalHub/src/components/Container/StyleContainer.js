@@ -40,3 +40,56 @@ export const BoxAgeEmail = styled.SafeAreaView`
     margin-right: 35px;
     margin-left: 35px;
 `
+
+export const BoxDataHome = styled.SafeAreaView`
+
+    flex-direction: column;
+
+    width: 120px;
+    height: 55px;
+
+    align-items: center;
+
+    
+    margin-top: 26%; 
+    
+`
+
+export const BoxHome = styled.SafeAreaView`
+    width: 200px;
+    height: 100%;
+    flex-direction: row;
+  
+    margin-bottom: 8%;
+    margin-right: 33%;
+`
+
+export const MoveIconBell = styled.SafeAreaView`
+
+    width: 35px; 
+    height: 35px;
+    margin-top:9%;
+
+  
+   align-items: center;
+   
+`
+
+export const DateContainer = styled.SafeAreaView`
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+`
+
+export const AllDateContainer = styled.SafeAreaView`
+    width:80%;
+    flex-direction: row;
+    gap: 25px;
+`
+
+export const ButtonHomeContainer = styled.SafeAreaView`
+    margin-right: 5%;
+    width:80%;
+    flex-direction: row;
+    gap: 10px;
+`

@@ -19,7 +19,15 @@ export const TitleName = styled.Text`
 `
 
 export const TitleWelcome = styled.Text`
-    font-family: Quicksand_500Medium;
+    margin-right: 24px;
+    font-family: Quicksand_600SemiBold;
     font-size: 14px;
     color: #4E4B59;
 `
+
+export const TitleMonth = styled(Title)`
+
+    margin-top: 5%;
+    margin-right: 45%;
+`
+

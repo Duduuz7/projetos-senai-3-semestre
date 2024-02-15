@@ -51,3 +51,13 @@ export const CancelButtonRecords = styled(CancelButton)`
     margin-top:25px;
     margin-bottom: 40px;
     `
+
+export const DayText = styled.Text`
+    font-family: Quicksand_600SemiBold;
+    font-size: 14px;
+    color: #ACABB7;
+    `
+
+export const DayTextNumber = styled(DayText)`
+    color: #5F5C6B;
+`

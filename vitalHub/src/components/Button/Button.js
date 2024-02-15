@@ -1,5 +1,5 @@
-import { ButtonText, ButtonTextGoogle } from "../ButtonText/StyleButtonText";
-import { ButtonBlocked, GoogleButton, LargeButton, NormalButton, SmallButtonBlocked } from "./StyleButton";
+import { ButtonText, ButtonTextGoogle, ButtonTextHome, WhiteButtonText } from "../ButtonText/StyleButtonText";
+import { ButtonBlocked, ButtonHome, GoogleButton, LargeButton, NormalButton, SmallButtonBlocked, WhiteButtonHome } from "./StyleButton";
 import { AntDesign } from '@expo/vector-icons';
 
 export const ButtonNormal = ({
@@ -60,5 +60,29 @@ export const BlockedSmallButton = ({
             onPress={onPress}>
                 <ButtonText>{text}</ButtonText>
         </SmallButtonBlocked>
+    );
+}
+
+export const HomeButton = ({
+    onPress,
+    text
+}) => {
+    return (
+        <ButtonHome
+            onPress={onPress}>
+                <ButtonTextHome >{text}</ButtonTextHome>
+        </ButtonHome>
+    );
+}
+
+export const WhiteHomeButton = ({
+    onPress,
+    text
+}) => {
+    return (
+        <WhiteButtonHome
+            onPress={onPress}>
+                <WhiteButtonText>{text}</WhiteButtonText>
+        </WhiteButtonHome>
     );
 }

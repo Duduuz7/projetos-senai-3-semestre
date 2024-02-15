@@ -1,6 +1,6 @@
-import { Title, TitleName, TitleWelcome } from "./StyleTitle";
+import { Title, TitleMonth, TitleName, TitleWelcome } from "./StyleTitle";
 
-export const Title = ({ textTitle }) => {
+export const TitleNm = ({ textTitle }) => {
 
     return (
         <Title>
@@ -24,5 +24,14 @@ export const WelcomeTitle= ({ textTitle }) => {
         <TitleWelcome>
             {textTitle}
         </TitleWelcome>
+    )
+}
+
+export const MonthTitle= ({ textTitle }) => {
+
+    return (
+        <TitleMonth>
+            {textTitle}
+        </TitleMonth>
     )
 }
