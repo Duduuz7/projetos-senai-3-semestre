@@ -75,18 +75,6 @@ export const MoveIconBell = styled.SafeAreaView`
    
 `
 
-export const DateContainer = styled.SafeAreaView`
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-`
-
-export const AllDateContainer = styled.SafeAreaView`
-    width:80%;
-    flex-direction: row;
-    gap: 25px;
-`
-
 export const ButtonHomeContainer = styled.SafeAreaView`
     margin-right: 5%;
     width:80%;

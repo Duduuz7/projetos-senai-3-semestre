@@ -1,3 +1,4 @@
+import { StatusBar } from 'react-native'
 import { ButtonNormal } from '../../components/Button/Button'
 import { NormalButton } from '../../components/Button/StyleButton'
 import { ButtonText } from '../../components/ButtonText/StyleButtonText'
@@ -14,6 +15,8 @@ export const CreateAccount = ({ navigation }) => {
     return (
 
         <Container>
+
+            <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 

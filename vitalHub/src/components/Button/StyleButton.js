@@ -43,7 +43,6 @@ export const SmallButtonBlocked = styled(NormalButton)`
 
 export const ButtonHome = styled.TouchableOpacity`
     width: 110px;
-
     justify-content: center;
     height: 40px;
     background-color: #496BBA;
@@ -57,22 +56,3 @@ export const WhiteButtonHome = styled(ButtonHome)`
     background-color: #FBFBFB;
     border: 2px solid #607EC5;
 `
-
-
-// button: {
-//     borderRadius: 8,
-//     backgroundColor: reversed ? '#fff' : '#496BBA',
-//     width: '100%',
-//     height: 60,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     borderWidth: 1,
-//     borderColor: reversed ? '#496BBA' : '#fff',
-//     flexDirection: 'row',
-//     justifyContent: 'space-evenly',
-//   },
-//   buttonText: {
-//     color: reversed ? '#496BBA' : '#fff',
-//     textTransform: 'uppercase',
-//     fontWeight: '500',
-//     fontSize: 16,

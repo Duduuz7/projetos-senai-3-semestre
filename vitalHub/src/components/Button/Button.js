@@ -63,26 +63,14 @@ export const BlockedSmallButton = ({
     );
 }
 
-export const HomeButton = ({
-    onPress,
-    text
-}) => {
-    return (
-        <ButtonHome
-            onPress={onPress}>
-                <ButtonTextHome >{text}</ButtonTextHome>
-        </ButtonHome>
-    );
-}
-
-export const WhiteHomeButton = ({
-    onPress,
-    text
-}) => {
-    return (
-        <WhiteButtonHome
-            onPress={onPress}>
-                <WhiteButtonText>{text}</WhiteButtonText>
-        </WhiteButtonHome>
-    );
+export const FilterButton = ({selected = false, text, onPress=null}) => {
+    return(
+        <>
+            {selected ? 
+            <ButtonHome onPress={onPress}><ButtonTextHome>{text}</ButtonTextHome></ButtonHome>
+            :
+            <WhiteButtonHome onPress={onPress}><WhiteButtonText>{text}</WhiteButtonText></WhiteButtonHome>
+            }
+        </>
+    )
 }

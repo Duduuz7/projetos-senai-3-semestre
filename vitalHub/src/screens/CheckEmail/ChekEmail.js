@@ -1,17 +1,20 @@
+import { StatusBar } from "react-native"
 import { ButtonNormal } from "../../components/Button/Button"
 import { BoxNumeric, Container } from "../../components/Container/StyleContainer"
-import { CodeResend, EmailDescription,  } from "../../components/Descriptions/Descriptions"
+import { CodeResend, EmailDescription, } from "../../components/Descriptions/Descriptions"
 import { NumericInput } from "../../components/Input/Input"
 import { Close, Logo } from "../../components/Logo/StyleLogo"
 import { Title } from "../../components/Title/StyleTitle"
 
 
-export const CheckEmail = ({navigation}) => {
+export const CheckEmail = ({ navigation }) => {
     return (
 
         <Container>
 
-            <Close source={require('../../assets/x-top-screen.png')}/>
+            <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
+
+            <Close source={require('../../assets/x-top-screen.png')} />
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 
@@ -26,9 +29,9 @@ export const CheckEmail = ({navigation}) => {
                 <NumericInput placeholder={"0"} placeholderTextColor={"#34898F"} />
             </BoxNumeric>
 
-            <ButtonNormal text={"Confirmar"} onPress={() => {navigation.navigate("RedefinePassword")}}/>
+            <ButtonNormal text={"Confirmar"} onPress={() => { navigation.navigate("RedefinePassword") }} />
 
-            <CodeResend text={"Reenviar Código"}/>
+            <CodeResend text={"Reenviar Código"} />
 
         </Container>
 

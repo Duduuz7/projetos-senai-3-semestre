@@ -7,13 +7,13 @@ export const Logo = styled.Image`
 `
 
 export const Seta = styled.Image`
-margin-right: 340px;
-margin-top: 5px;
+margin-right: 320px;
+margin-top: 100px;
 `
 
 export const Close = styled.Image`
-margin-right: 340px;
-margin-top: 5px;
+margin-right: 320px;
+margin-top: 100px;
 `
 
 export const ImagemPerfilPaciente = styled.Image`
@@ -32,4 +32,9 @@ export const IconBell = styled.Image`
     width: 23px;
     height: 26px;
     align-self: center;
+`
+
+export const ImageCard = styled.Image`
+    width: 80px;
+    height: 80px
 `

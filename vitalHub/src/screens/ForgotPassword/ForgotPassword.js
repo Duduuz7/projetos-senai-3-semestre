@@ -1,3 +1,4 @@
+import { StatusBar } from "react-native"
 import { ButtonNormal } from "../../components/Button/Button"
 import { Container } from "../../components/Container/StyleContainer"
 import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
@@ -6,11 +7,13 @@ import { Logo, Seta } from "../../components/Logo/StyleLogo"
 import { Title } from "../../components/Title/StyleTitle"
 
 
-export const ForgotPassword = ({navigation}) => {
+export const ForgotPassword = ({ navigation }) => {
 
     return (
 
         <Container>
+
+             
 
             <Seta source={require('../../assets/Seta.png')} />
 
@@ -25,7 +28,7 @@ export const ForgotPassword = ({navigation}) => {
                 placeholderTextColor={'#49B3BA'}
             />
 
-            <ButtonNormal text={"Continuar"} onPress={() => navigation.navigate("CheckEmail")}/>
+            <ButtonNormal text={"Continuar"} onPress={() => navigation.navigate("CheckEmail")} />
 
 
         </Container>

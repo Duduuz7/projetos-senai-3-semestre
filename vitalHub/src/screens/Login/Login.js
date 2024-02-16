@@ -7,11 +7,14 @@ import { LinkMedium } from "../../components/TextMedium/TextMedium"
 import { LinkAccount } from "../../components/Link/Link"
 
 import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button"
+import { StatusBar } from "react-native"
 
 export const Login = ({navigation}) => {
     return (
 
         <Container>
+
+            <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 
