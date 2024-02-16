@@ -31,3 +31,9 @@ export const TitleMonth = styled(Title)`
     margin-right: 45%;
 `
 
+export const NameCard = styled(Title)`
+    font-size: 16px;
+    margin-right: 195px;
+    margin-bottom: 5px;
+`
+

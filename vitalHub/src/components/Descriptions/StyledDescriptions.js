@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { DescriptionPassword } from "./Descriptions"
 
 
 export const DescripritionForgot = styled.Text`
@@ -52,12 +53,29 @@ export const CancelButtonRecords = styled(CancelButton)`
     margin-bottom: 40px;
     `
 
-export const DayText = styled.Text`
-    font-family: Quicksand_600SemiBold;
+export const AgeTextCard = styled(DescripritionForgot)`
+    color: #8C8A97;
     font-size: 14px;
-    color: #ACABB7;
-    `
-
-export const DayTextNumber = styled(DayText)`
-    color: #5F5C6B;
+    height: 18px;
 `
+
+export const RoutineTextCard = styled(AgeTextCard)`
+    color: #8C8A97;
+`
+
+export const HourText = styled.Text`
+    margin-top: 8px; 
+    height: 30px;
+    color: #49B3BA;
+    font-size: 14px;
+    font-family: Quicksand_600SemiBold;
+`
+
+export const CancelCard = styled.Text`
+    margin-top: 3%;
+    margin-left: 32%;
+    font-family: MontserratAlternates_500Medium;
+    color: #C81D25;
+    font-size: 14px;
+`
+   

@@ -1,6 +1,22 @@
 import styled, { css } from "styled-components";
 
+
 export const CardContainer = styled.SafeAreaView`
-    width: 80%;
-    heigh: 110px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 18px;
+    width: 90%;
+    height: 105px;
+`
+
+export const AgeCard = styled.SafeAreaView`
+    margin-left: 9%;
+    margin-bottom: 0px;
+    flex-direction: row;
+    width: 100px;
+    height: 30px;
+    box-radius: 5px;
+    align-items: center;
+    justify-content: center;
 `

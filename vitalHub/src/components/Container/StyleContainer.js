@@ -81,3 +81,20 @@ export const ButtonHomeContainer = styled.SafeAreaView`
     flex-direction: row;
     gap: 10px;
 `
+
+export const BoxCard = styled.SafeAreaView`
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+`
+export const BoxTextCard = styled.SafeAreaView`
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+`
+export const BoxDateCancel = styled.SafeAreaView`
+    width: 210px;
+    height: 30px;
+    flex-direction: row;
+
+`

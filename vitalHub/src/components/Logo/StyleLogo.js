@@ -36,5 +36,10 @@ export const IconBell = styled.Image`
 
 export const ImageCard = styled.Image`
     width: 80px;
-    height: 80px
+    height: 80px;
+    border-radius: 6px;
+`
+
+export const PointCard = styled.Image`
+    margin-bottom: 5px;
 `

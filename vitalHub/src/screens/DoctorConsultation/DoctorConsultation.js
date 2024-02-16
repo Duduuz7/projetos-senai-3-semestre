@@ -8,6 +8,7 @@ import Calendar from "../../components/Calendar/Calendar"
 
 import { FilterButton } from "../../components/Button/Button"
 import { useState } from "react"
+import { Card } from "../../components/CardHome/CardHome"
 
 
 export const DoctorConsultation = () => {
@@ -59,6 +60,8 @@ export const DoctorConsultation = () => {
                     <FilterButton onPress={() => { setSelected({ canceladas: true }) }} selected={selected.canceladas} text={'Canceladas'} />
 
                 </ButtonHomeContainer>
+
+                <Card url={''} name={"Niccole Sarge"} age={""} routine={""}/>
 
             </Container>
 
