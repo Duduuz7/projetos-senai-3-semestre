@@ -32,8 +32,22 @@ export const TitleMonth = styled(Title)`
 `
 
 export const NameCard = styled(Title)`
+    margin-left: 10px;
     font-size: 16px;
-    margin-right: 195px;
+    align-self: flex-start;
     margin-bottom: 5px;
 `
 
+export const TitleSelect = styled(Title)`
+    margin-top: 25%;
+`
+
+export const NameCardSelect = styled.Text`
+    text-align: center;
+    font-size: 16px;
+    font-family: MontserratAlternates_600SemiBold;
+    margin-top: 5%;
+    margin-bottom: 6px;
+    align-self: flex-start;
+    color: #33303E;
+`

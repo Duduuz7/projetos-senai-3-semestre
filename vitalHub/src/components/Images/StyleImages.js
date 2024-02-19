@@ -5,6 +5,10 @@ export const Logo = styled.Image`
     height: 120px;
     margin: 20px 0px;
 `
+export const LogoCreateAccount = styled.Image`
+    margin-bottom: 20px;
+    margin-top: 22%;
+`
 
 export const Seta = styled.Image`
 margin-right: 320px;

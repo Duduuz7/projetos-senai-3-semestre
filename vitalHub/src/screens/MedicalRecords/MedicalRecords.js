@@ -3,7 +3,7 @@ import { BoxAgeEmail, Container, ScrollContainer } from "../../components/Contai
 import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
 import {  CancelButtonRecords } from "../../components/Descriptions/StyledDescriptions"
 import { HighInputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
-import { ImagemPerfilPaciente } from "../../components/Logo/StyleLogo"
+import { ImagemPerfilPaciente } from "../../components/Images/StyleImages"
 import { TitleProfile } from "../../components/Title/StyleTitle"
 
 

@@ -76,15 +76,17 @@ export const MoveIconBell = styled.SafeAreaView`
 `
 
 export const ButtonHomeContainer = styled.SafeAreaView`
-    margin-right: 5%;
-    width:80%;
+    width:100%;
+    margin-left: 9%;
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
 `
 
 export const BoxCard = styled.SafeAreaView`
     flex-direction: row;
     width: 100%;
+    margin-left: 15px;
+    /* border: 1px solid black; */
     align-items: flex-start;
 `
 export const BoxTextCard = styled.SafeAreaView`
@@ -97,4 +99,7 @@ export const BoxDateCancel = styled.SafeAreaView`
     height: 30px;
     flex-direction: row;
 
+`
+export const FlatContainer = styled.FlatList`
+width: 100%;
 `

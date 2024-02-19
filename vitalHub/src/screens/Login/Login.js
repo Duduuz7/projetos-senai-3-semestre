@@ -1,7 +1,7 @@
 
 import { Title } from "../../components/Title/StyleTitle"
 import { Container } from "../../components/Container/StyleContainer"
-import { Logo } from "../../components/Logo/StyleLogo"
+import { Logo } from "../../components/Images/StyleImages"
 import { Input } from "../../components/Input/Input"
 import { LinkMedium } from "../../components/TextMedium/TextMedium"
 import { LinkAccount } from "../../components/Link/Link"

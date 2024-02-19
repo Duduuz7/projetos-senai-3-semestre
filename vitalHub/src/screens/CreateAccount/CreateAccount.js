@@ -6,8 +6,8 @@ import { Container } from '../../components/Container/StyleContainer'
 import { DescriptionPassword } from '../../components/Descriptions/Descriptions'
 import { Input } from '../../components/Input/Input'
 import { Cancel } from '../../components/Link/Link'
-import { Logo } from '../../components/Logo/StyleLogo'
 import { Title } from '../../components/Title/StyleTitle'
+import { LogoCreateAccount } from '../../components/Images/StyleImages'
 
 
 export const CreateAccount = ({ navigation }) => {
@@ -18,7 +18,7 @@ export const CreateAccount = ({ navigation }) => {
 
             <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
-            <Logo source={require('../../assets/VitalHub_Logo1.png')} />
+            <LogoCreateAccount source={require('../../assets/VitalHub_Logo1.png')} />
 
             <Title>Criar Conta</Title>
 

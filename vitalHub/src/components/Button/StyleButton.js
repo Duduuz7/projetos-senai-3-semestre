@@ -26,7 +26,6 @@ export const LargeButton= styled(NormalButton)`
     height: 52px;
     margin-top: 0px;
     margin-bottom: 30px;
-
 `
 export const ButtonBlocked = styled(NormalButton)`
     background-color: #ACABB7;
@@ -55,4 +54,10 @@ export const ButtonHome = styled.TouchableOpacity`
 export const WhiteButtonHome = styled(ButtonHome)`
     background-color: #FBFBFB;
     border: 2px solid #607EC5;
+`
+export const LargeButtonSelect= styled(LargeButton)`
+    width: 91%;
+    height: 52px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 `

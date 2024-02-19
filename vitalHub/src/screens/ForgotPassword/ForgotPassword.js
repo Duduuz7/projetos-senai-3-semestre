@@ -3,7 +3,7 @@ import { ButtonNormal } from "../../components/Button/Button"
 import { Container } from "../../components/Container/StyleContainer"
 import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
 import { Input } from "../../components/Input/Input"
-import { Logo, Seta } from "../../components/Logo/StyleLogo"
+import { Logo, Seta } from "../../components/Images/StyleImages"
 import { Title } from "../../components/Title/StyleTitle"
 
 

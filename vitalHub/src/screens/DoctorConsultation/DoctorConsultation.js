@@ -1,14 +1,14 @@
-import { StatusBar } from "react-native"
-import { BoxDataHome, BoxHome, ButtonHomeContainer, Container, MoveIcon, MoveIconBell, ScrollContainer } from "../../components/Container/StyleContainer"
+import { FlatList, StatusBar } from "react-native"
+import { BoxDataHome, BoxHome, ButtonHomeContainer, Container, FlatContainer, MoveIconBell, ScrollContainer } from "../../components/Container/StyleContainer"
 import { Header } from "../../components/Header/StyledHeader"
-import { ImagemHome } from "../../components/Logo/StyleLogo"
+import { ImagemHome } from "../../components/Images/StyleImages"
 import { NameTitle, WelcomeTitle } from "../../components/Title/Title"
 import { Ionicons } from '@expo/vector-icons';
 import Calendar from "../../components/Calendar/Calendar"
 
 import { FilterButton } from "../../components/Button/Button"
 import { useState } from "react"
-import { Card } from "../../components/CardHome/CardHome"
+import { Card } from "../../components/Cards/Cards"
 
 
 export const DoctorConsultation = () => {
@@ -18,6 +18,53 @@ export const DoctorConsultation = () => {
         realizadas: false,
         canceladas: false,
     });
+
+    const image = require("../../assets/ImageCard.png");
+
+    const dataItens = [
+        {
+            id: 'fsdfsfsdf',
+            hour: '14:00',
+            image: image,
+            name: 'Niccole Sarge',
+            age: '22 anos',
+            routine: 'Rotina',
+            status: "r"
+        },
+        {
+            id: 'sdfsdf',
+            hour: '15:00',
+            image: image,
+            name: 'Richard Kosta',
+            age: '28 anos',
+            routine: 'Urgência',
+            status: "a"
+        },
+        {
+            id: 'asdas',
+            hour: '17:00',
+            image: image,
+            name: 'Neymar Jr',
+            age: '28 anos',
+            routine: 'Rotina',
+            status: "c"
+        }
+    ]
+
+    const Check = (data) => {
+        if (data.status === "a" && selected.agendadas) {
+            return true;
+        }
+        if (data.status === "r" && selected.realizadas) {
+            return true;
+        }
+        if (data.status === "c" && selected.canceladas) {
+            return true;
+        }
+        return false;
+    }
+
+    const data = dataItens.filter(Check);
 
     return (
 
@@ -52,7 +99,6 @@ export const DoctorConsultation = () => {
 
                 <ButtonHomeContainer>
 
-
                     <FilterButton onPress={() => { setSelected({ agendadas: true }) }} selected={selected.agendadas} text={'Agendadas'} />
 
                     <FilterButton onPress={() => { setSelected({ realizadas: true }) }} selected={selected.realizadas} text={'Realizadas'} />
@@ -61,7 +107,18 @@ export const DoctorConsultation = () => {
 
                 </ButtonHomeContainer>
 
-                <Card url={''} name={"Niccole Sarge"} age={""} routine={""}/>
+                <FlatContainer 
+                      data={data}
+                      renderItem={({ item }) => 
+                      <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={"b"}/>}
+                      keyExtractor={item => item.id} 
+                      />
+
+                {/* <Card url={require('../../assets/ImageCard.png')} name={"Niccole Sarge"} age={"22 anos"} routine={"Rotina"} hour={"14:00"}/>
+
+                <Card url={require('../../assets/ImageCardMale.png')} name={"Richard Kosta"} age={"28 anos"} routine={"Urgência"} hour={"15:00"}/>
+
+                <Card url={require('../../assets/ney.webp')} name={"Neymar Jr"} age={"33 anos"} routine={"Rotina"} hour={"17:00"}/> */}
 
             </Container>
 
@@ -70,69 +127,3 @@ export const DoctorConsultation = () => {
     )
 }
 
-{/* <AllDateContainer>
-
-<DateContainer>
-    <DayText>
-        Dom
-    </DayText>
-    <DayTextNumber>
-        01
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Seg
-    </DayText>
-    <DayTextNumber>
-        02
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Ter
-    </DayText>
-    <DayTextNumber>
-        03
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Qua
-    </DayText>
-    <DayTextNumber>
-        04
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Qui
-    </DayText>
-    <DayTextNumber>
-        05
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Sex
-    </DayText>
-    <DayTextNumber>
-        06
-    </DayTextNumber>
-</DateContainer>
-
-<DateContainer>
-    <DayText>
-        Sab
-    </DayText>
-    <DayTextNumber>
-        07
-    </DayTextNumber>
-</DateContainer>
-
-</AllDateContainer> */}

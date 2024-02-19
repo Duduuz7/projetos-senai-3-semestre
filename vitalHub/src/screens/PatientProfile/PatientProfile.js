@@ -3,7 +3,7 @@ import { Container, ContainerCepCidade, ScrollContainer } from "../../components
 import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
 import { DescripritionEmail, DescripritionForgot } from "../../components/Descriptions/StyledDescriptions"
 import { InputBox } from "../../components/InputBox/InputBox"
-import { ImagemPerfilPaciente } from "../../components/Logo/StyleLogo"
+import { ImagemPerfilPaciente } from "../../components/Images/StyleImages"
 import { TitleProfile } from "../../components/Title/StyleTitle"
 import { LargeButton, NormalButton } from "../../components/Button/StyleButton"
 import { ButtonText } from "../../components/ButtonText/StyleButtonText"

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { DescriptionPassword } from "./Descriptions"
 
 
 export const DescripritionForgot = styled.Text`
@@ -47,6 +46,10 @@ export const CancelButton = styled(ResendCode)`
     margin-left: 40%;
 `
 
+export const CancelLessMargin = styled(CancelButton)`
+    margin-top: 2px;
+`
+
 
 export const CancelButtonRecords = styled(CancelButton)`
     margin-top:25px;
@@ -57,6 +60,16 @@ export const AgeTextCard = styled(DescripritionForgot)`
     color: #8C8A97;
     font-size: 14px;
     height: 18px;
+`
+
+export const DoctorArea = styled(DescripritionForgot)`
+    color: #8C8A97;
+    font-size: 14px;
+    height: 18px;   
+    width: 49%;
+    align-self: flex-start; 
+    text-align: flex-start; 
+    /* border: 1px solid black; */
 `
 
 export const RoutineTextCard = styled(AgeTextCard)`
@@ -78,4 +91,3 @@ export const CancelCard = styled.Text`
     color: #C81D25;
     font-size: 14px;
 `
-   

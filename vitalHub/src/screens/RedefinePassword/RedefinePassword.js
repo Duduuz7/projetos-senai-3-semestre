@@ -5,7 +5,7 @@ import { ButtonText } from '../../components/ButtonText/StyleButtonText'
 import { Container } from '../../components/Container/StyleContainer'
 import { DescriptionPassword } from '../../components/Descriptions/Descriptions'
 import { Input } from '../../components/Input/Input'
-import { Close, Logo } from '../../components/Logo/StyleLogo'
+import { Close, Logo } from '../../components/Images/StyleImages'
 import { Title } from '../../components/Title/StyleTitle'
 
 export const RedefinePassword = () => {

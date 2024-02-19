@@ -3,7 +3,7 @@ import { ButtonNormal } from "../../components/Button/Button"
 import { BoxNumeric, Container } from "../../components/Container/StyleContainer"
 import { CodeResend, EmailDescription, } from "../../components/Descriptions/Descriptions"
 import { NumericInput } from "../../components/Input/Input"
-import { Close, Logo } from "../../components/Logo/StyleLogo"
+import { Close, Logo } from "../../components/Images/StyleImages"
 import { Title } from "../../components/Title/StyleTitle"
 
 
