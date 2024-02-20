@@ -2,10 +2,12 @@ import styled, { css } from "styled-components";
 
 
 export const CardContainer = styled.SafeAreaView`
+    margin-top: 12px;
+    align-self: center;
+    align-itens: center;
     background-color: #fff;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 18px;
     width: 90%;
     height: 105px;
     flex-direction: row;

@@ -9,6 +9,7 @@ import Calendar from "../../components/Calendar/Calendar"
 import { FilterButton } from "../../components/Button/Button"
 import { useState } from "react"
 import { Card } from "../../components/Cards/Cards"
+import { CancelModal } from "../../components/CancelModal/CancelModal"
 
 
 export const DoctorConsultation = () => {
@@ -21,9 +22,11 @@ export const DoctorConsultation = () => {
 
     const image = require("../../assets/ImageCard.png");
 
+    // CARD MOCADOS
+
     const dataItens = [
         {
-            id: 'fsdfsfsdf',
+            id: 1,
             hour: '14:00',
             image: image,
             name: 'Niccole Sarge',
@@ -32,7 +35,7 @@ export const DoctorConsultation = () => {
             status: "r"
         },
         {
-            id: 'sdfsdf',
+            id: 2,
             hour: '15:00',
             image: image,
             name: 'Richard Kosta',
@@ -41,7 +44,7 @@ export const DoctorConsultation = () => {
             status: "a"
         },
         {
-            id: 'asdas',
+            id: 3,
             hour: '17:00',
             image: image,
             name: 'Neymar Jr',
@@ -50,6 +53,8 @@ export const DoctorConsultation = () => {
             status: "c"
         }
     ]
+
+    //FILTRO PARA CARD
 
     const Check = (data) => {
         if (data.status === "a" && selected.agendadas) {
@@ -66,13 +71,27 @@ export const DoctorConsultation = () => {
 
     const data = dataItens.filter(Check);
 
+    // MODAL STATE PARA SETAR SE ESTA ABERTO
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    console.log(isModalOpen);
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };;
+
+    // RETURN
+
     return (
 
-        <ScrollContainer>
-
+        <Container>
             <Header>
 
-                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+                <StatusBar translucent backgroundColor="transparent" />
 
                 <BoxHome>
 
@@ -93,37 +112,35 @@ export const DoctorConsultation = () => {
 
             </Header>
 
-            <Container>
+            <Calendar />
 
-                <Calendar />
+            <ButtonHomeContainer>
 
-                <ButtonHomeContainer>
+                <FilterButton onPress={() => { setSelected({ agendadas: true }) }} selected={selected.agendadas} text={'Agendadas'} />
 
-                    <FilterButton onPress={() => { setSelected({ agendadas: true }) }} selected={selected.agendadas} text={'Agendadas'} />
+                <FilterButton onPress={() => { setSelected({ realizadas: true }) }} selected={selected.realizadas} text={'Realizadas'} />
 
-                    <FilterButton onPress={() => { setSelected({ realizadas: true }) }} selected={selected.realizadas} text={'Realizadas'} />
+                <FilterButton onPress={() => { setSelected({ canceladas: true }) }} selected={selected.canceladas} text={'Canceladas'} />
 
-                    <FilterButton onPress={() => { setSelected({ canceladas: true }) }} selected={selected.canceladas} text={'Canceladas'} />
+            </ButtonHomeContainer>
 
-                </ButtonHomeContainer>
+            <FlatContainer
+                data={data}
+                renderItem={({ item }) =>
+                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={isModalOpen}/>}
+                keyExtractor={item => item.id}
+            />
 
-                <FlatContainer 
-                      data={data}
-                      renderItem={({ item }) => 
-                      <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={"b"}/>}
-                      keyExtractor={item => item.id} 
-                      />
+            <CancelModal isOpen={true} onClose={closeModal} />
 
-                {/* <Card url={require('../../assets/ImageCard.png')} name={"Niccole Sarge"} age={"22 anos"} routine={"Rotina"} hour={"14:00"}/>
+            {/* <Card url={require('../../assets/ImageCard.png')} name={"Niccole Sarge"} age={"22 anos"} routine={"Rotina"} hour={"14:00"}/>
 
                 <Card url={require('../../assets/ImageCardMale.png')} name={"Richard Kosta"} age={"28 anos"} routine={"Urgência"} hour={"15:00"}/>
 
                 <Card url={require('../../assets/ney.webp')} name={"Neymar Jr"} age={"33 anos"} routine={"Rotina"} hour={"17:00"}/> */}
 
-            </Container>
+        </Container>
 
-        </ScrollContainer>
 
     )
 }
-

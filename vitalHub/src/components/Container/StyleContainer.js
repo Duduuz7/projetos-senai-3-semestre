@@ -85,7 +85,7 @@ export const ButtonHomeContainer = styled.SafeAreaView`
 export const BoxCard = styled.SafeAreaView`
     flex-direction: row;
     width: 100%;
-    margin-left: 15px;
+
     /* border: 1px solid black; */
     align-items: flex-start;
 `
@@ -94,11 +94,15 @@ export const BoxTextCard = styled.SafeAreaView`
     width: 100%;
     height: 100%;
 `
-export const BoxDateCancel = styled.SafeAreaView`
-    width: 210px;
-    height: 30px;
-    flex-direction: row;
+export const BoxTextDoctorCard = styled(BoxTextCard)`
+    margin-left: 10px;
+`
 
+export const BoxDateCancel = styled.SafeAreaView`
+    width: 71%;
+    height: 30px;
+    justify-content: space-between;;
+    flex-direction: row;
 `
 export const FlatContainer = styled.FlatList`
 width: 100%;

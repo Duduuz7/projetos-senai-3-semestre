@@ -1,5 +1,5 @@
 import { ViewBoxCode } from "../Container/StyleContainer";
-import {DescripritionEmail, DescripritionForgot, EmailText, ResendCode } from "./StyledDescriptions";
+import {CancelCard, DescripritionEmail, DescripritionForgot, EmailText, ResendCode, SeeMedicalRecord } from "./StyledDescriptions";
 
 export const DescriptionPassword = ({ description }) => {
 
@@ -29,6 +29,26 @@ export const CodeResend = ({
     return(
 
         <ResendCode onPress={onPress}>{text}</ResendCode>
+
+    )
+
+}
+
+export const SeeRecord = ({ onPressAppointment, text }) => {
+
+    return(
+
+        <SeeMedicalRecord onPress={onPressAppointment}>{text}</SeeMedicalRecord>
+
+    )
+
+}
+
+export const CardCancel = ({ onPressCancel, text }) => {
+
+    return(
+
+        <CancelCard onPress={onPressCancel}>{text}</CancelCard>
 
     )
 

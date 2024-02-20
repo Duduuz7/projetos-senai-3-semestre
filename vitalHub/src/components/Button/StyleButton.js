@@ -59,5 +59,5 @@ export const LargeButtonSelect= styled(LargeButton)`
     width: 91%;
     height: 52px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 `
