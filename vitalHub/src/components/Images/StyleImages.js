@@ -10,6 +10,11 @@ export const LogoCreateAccount = styled.Image`
     margin-top: 22%;
 `
 
+export const ImageModalRecord = styled.Image`
+    width: 285px;
+    height: 181px;
+`
+
 export const Seta = styled.Image`
 margin-right: 320px;
 margin-top: 100px;

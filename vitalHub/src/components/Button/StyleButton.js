@@ -57,7 +57,7 @@ export const WhiteButtonHome = styled(ButtonHome)`
 `
 export const LargeButtonSelect= styled(LargeButton)`
     width: 91%;
-    height: 52px;
+    height: 50px;
     margin-top: 30px;
     margin-bottom: 25px;
 `

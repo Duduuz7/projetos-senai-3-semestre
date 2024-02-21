@@ -12,6 +12,11 @@ export const TitleModal = styled(Title)`
     margin-bottom: 0px;
 `
 
+export const TitleModalRecord = styled(TitleModal)`
+    margin-bottom: 18px;
+    margin-top: 30px;
+`
+
 export const TitleProfile = styled(Title)`
     margin-bottom: 12px;
 `

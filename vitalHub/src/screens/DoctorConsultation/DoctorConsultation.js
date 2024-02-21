@@ -9,11 +9,13 @@ import Calendar from "../../components/Calendar/Calendar"
 import { FilterButton } from "../../components/Button/Button"
 import { useState } from "react"
 import { Card } from "../../components/Cards/Cards"
-import { CancelModal } from "../../components/CancelModal/CancelModal"
+import { CancellationModal } from "../../components/CancellationModal/CancellationModal"
+import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
 
 
 export const DoctorConsultation = () => {
 
+    //STATE PARA O ESTADO DOS CARDS FLATLIST, BOTOES FILTRO
     const [selected, setSelected] = useState({
         agendadas: true,
         realizadas: false,
@@ -29,7 +31,7 @@ export const DoctorConsultation = () => {
             id: 1,
             hour: '14:00',
             image: image,
-            name: 'Niccole Sarge',
+            name: 'Niccole Sarga',
             age: '22 anos',
             routine: 'Rotina',
             status: "r"
@@ -71,18 +73,10 @@ export const DoctorConsultation = () => {
 
     const data = dataItens.filter(Check);
 
-    // MODAL STATE PARA SETAR SE ESTA ABERTO
+    // STATES PARA OS MODAIS
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    console.log(isModalOpen);
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };;
+    const [showModalCancel, setShowModalCancel] = useState(false);
+    const [showModalAppointment, setShowModalAppointment] = useState(false);
 
     // RETURN
 
@@ -127,11 +121,24 @@ export const DoctorConsultation = () => {
             <FlatContainer
                 data={data}
                 renderItem={({ item }) =>
-                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={isModalOpen}/>}
+                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointment={() => setShowModalAppointment(true)} />}
+
                 keyExtractor={item => item.id}
+
+                showsVerticalScrollIndicator={false}
+
             />
 
-            <CancelModal isOpen={true} onClose={closeModal} />
+            <CancellationModal
+                visible={showModalCancel}
+                setShowModalCancel={setShowModalCancel}
+            />
+
+            <AppointmentModal 
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
+            /> 
+
 
             {/* <Card url={require('../../assets/ImageCard.png')} name={"Niccole Sarge"} age={"22 anos"} routine={"Rotina"} hour={"14:00"}/>
 

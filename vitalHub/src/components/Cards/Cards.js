@@ -11,7 +11,7 @@ import { FontAwesome6 } from '@expo/vector-icons';
 
 
 
-export const Card = ({ url, name, age, routine, hour, status, onPressCancel }) => {
+export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onPressAppointment }) => {
 
     const Check = () => {
 
@@ -45,7 +45,7 @@ export const Card = ({ url, name, age, routine, hour, status, onPressCancel }) =
 
                     </ConsultDateGray>
 
-                    <SeeRecord onPressAppointment={""} text={"Ver Prontuário"}/>
+                    <SeeRecord onPressAppointment={onPressAppointment} text={"Ver Prontuário"}/>
 
                 </BoxDateCancel>
             )
@@ -122,6 +122,7 @@ export const CardSelectDoctor = ({ url, name, doctorArea }) => {
     return (
 
         <CardContainer>
+            
             <ImageCard source={url} />
 
             <BoxCard>

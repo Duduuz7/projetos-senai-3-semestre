@@ -12,6 +12,10 @@ export const DescripritionForgot = styled.Text`
     align-self: center;
 `
 
+export const DescriptionModalRecord = styled(DescripritionForgot)`
+    font-size: 14px;
+`
+
 export const DescripritionEmail = styled.Text`
     width: 80%;
     font-family: Quicksand_500Medium;
@@ -48,6 +52,8 @@ export const CancelButton = styled(ResendCode)`
 
 export const CancelLessMargin = styled(CancelButton)`
     margin-top: 2px;
+    margin-left: 37%;
+    margin-bottom: 15px;
 `
 export const CancelButtonRecords = styled(CancelButton)`
     margin-top:25px;
@@ -71,6 +77,7 @@ export const DoctorArea = styled(DescripritionForgot)`
 `
 
 export const RoutineTextCard = styled(AgeTextCard)`
+    margin-top: 6px;
     height: 20px;
     color: #8C8A97;
 `
