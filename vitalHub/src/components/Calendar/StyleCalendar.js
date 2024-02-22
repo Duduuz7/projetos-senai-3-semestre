@@ -6,5 +6,4 @@ export const StyledCalendarStrip = styled(CalendarStrip)`
   width: 100%;
   margin-top: 25px;
   padding: 0px;
-
 `

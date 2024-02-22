@@ -1,13 +1,15 @@
 
-import { BoxCard, BoxDateCancel, BoxTextCard, BoxTextDoctorCard } from "../Container/StyleContainer"
-import { ConsultDate, ConsultDateGray, ConsultDateGrey } from "../DateConsult/StyleDateConsult"
+import { BoxCard, BoxDateCancel, BoxRateTime, BoxTextCard, BoxTextClinicCard, BoxTextDoctorCard } from "../Container/StyleContainer"
+import { ConsultDate, ConsultDateGray } from "../DateConsult/StyleDateConsult"
 import { CardCancel, SeeRecord } from "../Descriptions/Descriptions"
-import { AgeTextCard, CancelCard, DescripritionForgot, DoctorArea, HourText, HourTextGray, HourTextGrey, RoutineTextCard, SeeMedicalRecord } from "../Descriptions/StyledDescriptions"
+import { AgeTextCard, DoctorArea, HourText, HourTextGray, HourTextGrey, LocalizationText, RateText, RoutineTextCard, SeeMedicalRecord } from "../Descriptions/StyledDescriptions"
 import { ImageCard, PointCard } from "../Images/StyleImages"
-import { NameCard, NameCardSelect, Title } from "../Title/StyleTitle"
-import { AgeCard, CardContainer } from "./StyleCards"
+import { NameCard, NameCardClinic, NameCardSelect } from "../Title/StyleTitle"
+import { AgeCard, BoxRate, CardContainer, CardContainerClinic } from "./StyleCards"
 
 import { FontAwesome6 } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
@@ -27,7 +29,7 @@ export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onP
 
                     </ConsultDate>
 
-                    <CardCancel onPressCancel={onPressCancel} text={"Cancelar"}/>
+                    <CardCancel onPressCancel={onPressCancel} text={"Cancelar"} />
 
                 </BoxDateCancel>
             )
@@ -45,7 +47,7 @@ export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onP
 
                     </ConsultDateGray>
 
-                    <SeeRecord onPressAppointment={onPressAppointment} text={"Ver Prontuário"}/>
+                    <SeeRecord onPressAppointment={onPressAppointment} text={"Ver Prontuário"} />
 
                 </BoxDateCancel>
             )
@@ -122,7 +124,7 @@ export const CardSelectDoctor = ({ url, name, doctorArea }) => {
     return (
 
         <CardContainer>
-            
+
             <ImageCard source={url} />
 
             <BoxCard>
@@ -136,6 +138,46 @@ export const CardSelectDoctor = ({ url, name, doctorArea }) => {
             </BoxCard>
 
         </CardContainer>
+
+    )
+
+}
+
+export const CardSelectClinic = ({ name, localization, rate, openTime }) => {
+
+    return (
+
+        <CardContainerClinic>
+
+            <BoxCard>
+
+                <BoxTextClinicCard>
+                    <NameCardClinic>{name}</NameCardClinic>
+
+                    <LocalizationText>{localization}</LocalizationText>
+                </BoxTextClinicCard>
+
+                <BoxRateTime>
+
+                    <BoxRate>
+                        <AntDesign name="star" size={18} color="#F9A620" />
+
+                        <RateText>{rate}</RateText>
+                    </BoxRate>
+
+                    <ConsultDate>
+
+                        <MaterialCommunityIcons name="calendar-outline" size={15} color="#49B3BA" />
+
+                        <HourText>{openTime}</HourText>
+
+                    </ConsultDate>
+
+                </BoxRateTime>
+
+            </BoxCard>
+
+        </CardContainerClinic>
 
     )
 

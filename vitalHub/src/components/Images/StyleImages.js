@@ -45,7 +45,7 @@ export const IconBell = styled.Image`
 
 export const ImageCard = styled.Image`
     width: 80px;
-    height: 80px;
+    height: 86px;
     border-radius: 6px;
 `
 

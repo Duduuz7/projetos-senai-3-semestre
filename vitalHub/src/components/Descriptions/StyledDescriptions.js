@@ -52,8 +52,9 @@ export const CancelButton = styled(ResendCode)`
 
 export const CancelLessMargin = styled(CancelButton)`
     margin-top: 2px;
-    margin-left: 37%;
     margin-bottom: 15px;
+    align-self: center;
+    justify-self: center;
 `
 export const CancelButtonRecords = styled(CancelButton)`
     margin-top:25px;
@@ -74,6 +75,10 @@ export const DoctorArea = styled(DescripritionForgot)`
     align-self: flex-start; 
     text-align: flex-start; 
     /* border: 1px solid black; */
+`
+
+export const LocalizationText = styled(DoctorArea)`
+    font-family: QuickSand_600SemiBold;
 `
 
 export const RoutineTextCard = styled(AgeTextCard)`
@@ -111,4 +116,10 @@ export const DescriptionCancel = styled.Text`
     font-family: Quicksand_500Medium;
     color: #4E4B59;
     text-align: center;
+`
+
+export const RateText = styled.Text`
+    font-size: 14px;
+    font-family: QuickSand_600SemiBold;
+    color: #F9A620;
 `
