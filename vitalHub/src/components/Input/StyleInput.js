@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+
 export const InputText = styled.TextInput`
 width:80%;
 border:2px solid #49B3BA;
@@ -57,4 +58,6 @@ export const InputTextLargeModal = styled(InputText)`
     text-transform: capitalize;
     font-size: 16px;
 `
+// export const InputSelect = styled.RNPickerSelect`
 
+// ` 

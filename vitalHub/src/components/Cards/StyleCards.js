@@ -10,6 +10,7 @@ export const CardContainer = styled.SafeAreaView`
     padding: 10px;
     width: 90%;
     height: 105px;
+    elevation: 4px;
     flex-direction: row;
 `
 
