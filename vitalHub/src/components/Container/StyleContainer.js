@@ -83,6 +83,9 @@ export const ButtonHomeContainer = styled.SafeAreaView`
     flex-direction: row;
     gap: 15px;
 `
+export const ButtonModalContainer = styled(ButtonHomeContainer)`
+    margin-left: 0;
+`
 
 export const BoxCard = styled.SafeAreaView`
     flex-direction: row;

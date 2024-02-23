@@ -1,4 +1,4 @@
-import { InputHigh, InputNumeric, InputProfile, InputText, InputTextLarge } from "./StyleInput";
+import { InputHigh, InputNumeric, InputProfile, InputText, InputTextLarge, InputTextLargeModal } from "./StyleInput";
 
 export function Input({
     placeholder,
@@ -105,6 +105,30 @@ export function LargeInput({
 }) {
     return(
         <InputTextLarge
+        editable={editable}
+        placeholder={placeholder}
+        keyboardType= {keyboardType}
+        placeholderTextColor={placeholderTextColor}
+        maxLength={maxLength}
+        value= {fieldValue}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+        />
+    )
+}
+
+export function LargeInputModal({
+    placeholder,
+    fieldValue,
+    onChangeText ,
+    keyboardType,
+    maxLength,
+    placeholderTextColor,
+    editable = true,
+    secureTextEntry = false
+}) {
+    return(
+        <InputTextLargeModal
         editable={editable}
         placeholder={placeholder}
         keyboardType= {keyboardType}

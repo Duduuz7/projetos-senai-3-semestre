@@ -12,6 +12,8 @@ export const SelectDate = () => {
             <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
             <TitleSelect>Selecionar Data</TitleSelect>
+            
+            
 
         </Container>
 

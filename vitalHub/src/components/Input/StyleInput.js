@@ -52,3 +52,9 @@ export const InputTextLarge = styled(InputText)`
     width: 90%;
 `
 
+export const InputTextLargeModal = styled(InputText)`
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 16px;
+`
+

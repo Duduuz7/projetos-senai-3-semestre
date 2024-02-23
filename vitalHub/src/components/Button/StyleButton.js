@@ -61,3 +61,21 @@ export const LargeButtonSelect= styled(LargeButton)`
     margin-top: 30px;
     margin-bottom: 25px;
 `
+
+export const LargeButtonModal = styled(LargeButton)`
+    width: 100%;
+    height: 50px;
+    margin-top: 59%;
+    margin-bottom: 25px;
+`
+
+export const SmallButton = styled.TouchableOpacity`
+width: 30%;
+height: 55px;
+padding-top:16px;
+font-family: "MontserratAlternates_600SemiBold";
+border: 2px solid  #60BFC5;
+border-radius: 10px;
+display: flex;
+align-items:center;
+`;

@@ -13,6 +13,7 @@ import { CancellationModal } from "../../components/CancellationModal/Cancellati
 
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Stethoscope } from "../../components/Stethoscope/StyleSthetoscope"
+import { ScheduleModal } from "../../components/ScheduleModal/ScheduleModal"
 
 
 export const PatientConsultation = () => {
@@ -61,6 +62,8 @@ export const PatientConsultation = () => {
 
     const [showModalCancel, setShowModalCancel] = useState(false);
     const [showModalAppointment, setShowModalAppointment] = useState(false);
+
+    const [showModal, setShowModal] = useState(false);
 
     // RETURN
 
@@ -113,7 +116,7 @@ export const PatientConsultation = () => {
 
             />
 
-            <Stethoscope onPress={""}>
+            <Stethoscope onPress={() => setShowModal(true)}>
 
                 <FontAwesome6
                     name="stethoscope"
@@ -128,19 +131,19 @@ export const PatientConsultation = () => {
                 setShowModalCancel={setShowModalCancel}
             />
 
+
+            <ScheduleModal
+                visible={showModal}
+                setShowModal={setShowModal}
+            />
+
             {/* <AppointmentModal 
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />  */}
 
 
-            {/* <Card url={require('../../assets/ImageCard.png')} name={"Niccole Sarge"} age={"22 anos"} routine={"Rotina"} hour={"14:00"}/>
-
-                <Card url={require('../../assets/ImageCardMale.png')} name={"Richard Kosta"} age={"28 anos"} routine={"Urgência"} hour={"15:00"}/>
-
-                <Card url={require('../../assets/ney.webp')} name={"Neymar Jr"} age={"33 anos"} routine={"Rotina"} hour={"17:00"}/> */}
-
         </Container>
-        
+
     )
 }

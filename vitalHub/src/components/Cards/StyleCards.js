@@ -15,6 +15,7 @@ export const CardContainer = styled.SafeAreaView`
 
 export const CardContainerClinic = styled(CardContainer)`
     height: 85px;
+    elevation: 4px;
 `
 
 export const AgeCard = styled.SafeAreaView`

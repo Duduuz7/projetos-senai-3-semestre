@@ -17,6 +17,7 @@ import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectCLinic } from './src/screens/SelectClinic/SelectClinic';
 import { PatientConsultation } from './src/screens/PatientConsultation/PatientConsultation';
 import { SelectDate } from './src/screens/SelectDate/SelectDate';
+import { ConsultLocalization } from './src/screens/ConsultLocalization/ConsultLocalization';
 
 
 const Stack = createNativeStackNavigator();
@@ -129,6 +130,12 @@ export default function App() {
           name="SelectDate"
           component={SelectDate}
           options={{ title: 'SelectDate' }}
+        />
+
+        <Stack.Screen
+          name="ConsultLocalization"
+          component={ConsultLocalization}
+          options={{ title: 'ConsultLocalization' }}
         />
 
       </Stack.Navigator>
