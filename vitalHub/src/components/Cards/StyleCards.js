@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 
-export const CardContainer = styled.SafeAreaView`
+export const CardContainer = styled.TouchableOpacity`
     margin-top: 12px;
     align-self: center;
     align-itens: center;
@@ -9,8 +9,8 @@ export const CardContainer = styled.SafeAreaView`
     border-radius: 5px;
     padding: 10px;
     width: 90%;
-    height: 105px;
-    elevation: 4px;
+    height: 106px;
+    elevation: 0px;
     flex-direction: row;
 `
 

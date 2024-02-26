@@ -69,6 +69,13 @@ export const LargeButtonModal = styled(LargeButton)`
     margin-bottom: 25px;
 `
 
+export const LargeButtonConfirmModal = styled(LargeButton)`
+    width: 100%;
+    height: 50px;
+    margin-top: 4%;
+    margin-bottom: 25px;
+`
+
 export const SmallButton = styled.TouchableOpacity`
 width: 30%;
 height: 55px;

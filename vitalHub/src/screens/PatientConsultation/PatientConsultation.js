@@ -14,6 +14,7 @@ import { CancellationModal } from "../../components/CancellationModal/Cancellati
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Stethoscope } from "../../components/Stethoscope/StyleSthetoscope"
 import { ScheduleModal } from "../../components/ScheduleModal/ScheduleModal"
+import { PatientAppointmentModal } from "../../components/PatientAppointmentModal/PatientAppointmentModal"
 
 
 export const PatientConsultation = () => {
@@ -108,7 +109,7 @@ export const PatientConsultation = () => {
             <FlatContainer
                 data={data}
                 renderItem={({ item }) =>
-                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointment={() => setShowModalAppointment(true)} />}
+                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointmentCard={() => setShowModalAppointment(true)} onPressCard={() => {() => setShowModalAppointment(true)}}/>}
 
                 keyExtractor={item => item.id}
 
@@ -137,10 +138,10 @@ export const PatientConsultation = () => {
                 setShowModal={setShowModal}
             />
 
-            {/* <AppointmentModal 
+            <PatientAppointmentModal
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
-            />  */}
+            />  
 
 
         </Container>

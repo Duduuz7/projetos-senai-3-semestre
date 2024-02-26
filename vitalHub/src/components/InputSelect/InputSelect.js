@@ -1,21 +1,36 @@
-import RNPickerSelect from "react-native-picker-select";
 import { StyleSheet, View } from "react-native";
+import RNPickerSelect from 'react-native-picker-select'
 
-// import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-// import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const InputSelect = () => {
+import { AntDesign } from '@expo/vector-icons';
+
+
+export const InputSelect = () => {
+  const pickerStyles = {
+    inputIOS: style.pickerInput,
+    inputAndroid: style.pickerInput,
+    placeholder: { color: '#34898F', },
+  };
+  const placeholder = {
+    label: 'Selecionar horário',
+    value: null,
+    color: '#34898F',
+  };
+
   return (
-    <View style={{ width : 316 }}>
+    <View style={{ width: '90%' }}>
       <RNPickerSelect
+        useNativeAndroidPickerStyle={false}
         style={style}
         Icon={() => {
-        //   return <FontAwesomeIcon icon={faCaretDown} color='#34898F' size={22}/>
+          return <AntDesign name="caretdown" size={22} color="#34898F" marginRight={8} marginTop={"73%"} />
         }}
         placeholder={{
-          label : 'Selecione um valor',
-          value : null,
-          color : '#34898F'
+          label: 'Selecione um valor',
+          value: null,
+          color: '#34898F'
         }}
         onValueChange={(value) => console.log(value)}
         items={[
@@ -34,35 +49,34 @@ const InputSelect = () => {
 const style = StyleSheet.create({
   inputIOS: {
     fontSize: 16,
-    padding : 16,
+    padding: 16,
     borderWidth: 2,
     borderColor: '#60BFC5',
     borderRadius: 5,
     color: '#34898F',
     alignContent: 'center',
-    alignItems : 'center',
-    justifyContent : 'center',
-    fontFamily : 'MontserratAlternates_600SemiBold'
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'MontserratAlternates_600SemiBold'
   },
   inputAndroid: {
+    marginBottom: "34%",
     fontSize: 16,
-    padding : 16,
+    padding: 16,
     borderWidth: 2,
     borderColor: '#60BFC5',
     borderRadius: 5,
     color: '#34898F',
     alignItems: 'center',
-    justifyContent : 'center',
-    
-    fontFamily : 'MontserratAlternates_600SemiBold'
+    justifyContent: 'center',
+
+    fontFamily: 'MontserratAlternates_600SemiBold'
   },
-  iconContainer : {
-    top : '25%',
-    marginRight : 10
+  iconContainer: {
+    // top: '25%',
+    marginRight: 10
   },
-  placeholder : {
+  placeholder: {
     color: '#34898F',
   }
 })
-
-export default InputSelect

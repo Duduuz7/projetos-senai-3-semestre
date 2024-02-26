@@ -5,10 +5,11 @@ import { CardCancelLess } from "../Descriptions/Descriptions"
 import { DescriptionModalRecord } from "../Descriptions/StyledDescriptions"
 import { ImageModalRecord } from "../Images/StyleImages"
 import { TitleModal, TitleModalRecord } from "../Title/StyleTitle"
-import { BoxAgeEmailModal } from "./StyleAppointmentModal"
+import { BoxAgeEmailModal } from "./StylePatientAppointmentModal"
 
 
-export const AppointmentModal = ({
+
+export const PatientAppointmentModal = ({
     visible,
     setShowModalAppointment = null,
     ...rest
@@ -24,18 +25,18 @@ export const AppointmentModal = ({
 
                 <ModalContent>
 
-                    <ImageModalRecord source={require('../../assets/ImageModalRecord.png')} />
+                    <ImageModalRecord source={require('../../assets/CardRecordPatient(doctorImage).png')} />
 
-                    <TitleModalRecord>Niccole Sarga</TitleModalRecord>
+                    <TitleModalRecord>Dr Claudio</TitleModalRecord>
 
                     <BoxAgeEmailModal>
 
-                        <DescriptionModalRecord>22 anos</DescriptionModalRecord>
-                        <DescriptionModalRecord>niccole.sarga@gmail.com</DescriptionModalRecord>
+                        <DescriptionModalRecord>Clínico Geral</DescriptionModalRecord>
+                        <DescriptionModalRecord>CRM-15286</DescriptionModalRecord>
 
                     </BoxAgeEmailModal>
 
-                    <ButtonLargeConfirmModal text={"Inserir Prontuário"} />
+                    <ButtonLargeConfirmModal text={"Ver Local da Consulta"} />
 
                     <CardCancelLess onPressCancel={() => setShowModalAppointment(false)} text={"Cancelar"} />
 

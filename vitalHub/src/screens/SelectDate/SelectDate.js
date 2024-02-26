@@ -4,10 +4,15 @@ import { TitleSelect } from "../../components/Title/StyleTitle"
 import CalendarComponent from "../../components/CalendarComponent/CalendarComponent"
 import { ButtonLargeSelect } from "../../components/Button/Button"
 import { CardCancelLess } from "../../components/Descriptions/Descriptions"
-import InputSelect from "../../components/InputSelect/InputSelect"
+import { InputSelect } from "../../components/InputSelect/InputSelect"
+import { Label, LabelSelect } from "../../components/Label/Label"
+import { ConfirmAppointmentModal } from "../../components/ConfirmAppointmentModal/ConfirmAppointmentModal"
+import { useState } from "react"
 
 
 export const SelectDate = () => {
+
+    const [showModal, setShowModal] = useState(false);
 
     return (
 
@@ -19,11 +24,18 @@ export const SelectDate = () => {
 
             <CalendarComponent />
 
-            <InputSelect/>
+            <LabelSelect textLabel={"Selecione um horário disponível"} />
 
-            <ButtonLargeSelect onPress={''} text={"Continuar"} />
+            <InputSelect />
 
-            <CardCancelLess text={"Cancelar"} />
+            <ButtonLargeSelect onPress={() => setShowModal(true)} text={"Continuar"} />
+
+            <CardCancelLess onPressCancel={() => setShowModal(false)}  text={"Cancelar"} />
+
+            <ConfirmAppointmentModal
+                visible={showModal}
+                setShowModal={setShowModal}
+            />
 
         </Container>
 

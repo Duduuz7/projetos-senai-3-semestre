@@ -13,7 +13,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
-export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onPressAppointment }) => {
+export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onPressAppointment, onPressAppointmentCard }) => {
 
     const Check = () => {
 
@@ -88,7 +88,7 @@ export const Card = ({ url, name, age, routine, hour, status, onPressCancel, onP
 
     return (
 
-        <CardContainer>
+        <CardContainer onPress={onPressAppointmentCard}>
 
             <BoxCard>
 

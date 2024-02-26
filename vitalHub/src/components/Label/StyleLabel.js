@@ -9,10 +9,25 @@ font-family: Quicksand_600SemiBold;
 color:#33303E;
 `
 
+export const LabelDescription = styled.Text`
+    font-size: 16px;
+    font-family: Quicksand_600SemiBold;
+
+    width: 100%;
+    color:#33303E;
+`
+
 export const InputLabelModal = styled(InputLabel)`
 font-size: 18px;
 color: #000000;
 margin-left: 0%;
+`
+
+export const InputLabelSelect = styled(InputLabel)`
+font-size: 16px;
+color: #000000;
+margin-top: 4%;
+margin-bottom: 4%;
 `
 
 export const LabelButtonModal = styled(InputLabel)`
