@@ -11,6 +11,10 @@ export const DescripritionForgot = styled.Text`
     margin-bottom: 15px;
     align-self: center;
 `
+export const DescripritionPrescription = styled(DescripritionForgot)`
+    margin-left: 30%;
+`
+
 
 export const DescriptionConfirmModal = styled(DescripritionForgot)`
     width: 90%;

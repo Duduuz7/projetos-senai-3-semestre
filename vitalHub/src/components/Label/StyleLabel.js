@@ -9,6 +9,12 @@ font-family: Quicksand_600SemiBold;
 color:#33303E;
 `
 
+export const InputPrescription = styled(InputLabel)`
+    text-align: center;
+    margin-left: 0px;
+
+`
+
 export const LabelDescription = styled.Text`
     font-size: 16px;
     font-family: Quicksand_600SemiBold;
@@ -37,4 +43,10 @@ font-size: 18px;
 margin-bottom: 16px;
 color: #000000;
 margin-left: 0%;
+`
+
+export const InputLabelPrescription = styled(InputLabel)`
+font-size: 16px;
+/* align-self: flex-start; */
+
 `

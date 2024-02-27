@@ -42,6 +42,7 @@ border-radius: 8px;
 margin-top: 10px;
 margin-bottom: 5px; */
 font-size: 16px;
+align-self: center;
 `
 export const InputHigh = styled(InputText)`
     padding-bottom: 82px;
@@ -58,6 +59,43 @@ export const InputTextLargeModal = styled(InputText)`
     text-transform: capitalize;
     font-size: 16px;
 `
+
+export const InputPrescription = styled(InputProfile)`
+    
+`
+
+
 // export const InputSelect = styled.RNPickerSelect`
 
 // ` 
+
+export const InputTextLargePrescription = styled(InputText)`
+background-color: #F5F3F3;
+width: 100%;
+border: 1px solid #F5F3F3;
+font-size: 14px;
+`
+
+
+export const InputHighPrescription = styled(InputText)`
+    padding-bottom: 82px;
+    height: 125px;
+    width: 100%;
+    font-size: 14px;
+    color: #4E4B59;
+    border: 1px solid #F5F3F3;
+    background-color: #F5F3F3;
+    
+`
+
+export const InputHighPrescriptionImage = styled(InputText)`
+
+/* align-items: center; */
+text-align: center;
+height: 111px;
+width: 100%;
+border: 1px solid #F5F3F3;
+font-size: 14px;
+background-color: #F5F3F3;
+
+`

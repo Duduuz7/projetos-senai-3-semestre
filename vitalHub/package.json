@@ -12,6 +12,7 @@
     "@expo-google-fonts/montserrat": "^0.2.3",
     "@expo-google-fonts/montserrat-alternates": "^0.2.3",
     "@expo-google-fonts/quicksand": "^0.2.3",
+    "@expo/vector-icons": "^14.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
@@ -30,6 +31,7 @@
     "react-native-calendar-strip": "^2.2.6",
     "react-native-calendars": "^1.1303.0",
     "react-native-picker-select": "^9.0.1",
+    "react-native-vector-icons": "^10.0.3",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {

@@ -11,3 +11,9 @@ gap: 8px;
 margin-top:15px;
 
 `
+
+export const FieldContent = styled.View`
+    width: ${props => `${props.fieldWidth}%`} ;
+    margin-top: 10px; 
+    width: 100%;  
+`
