@@ -1,8 +1,6 @@
-import { HighInput, Input, LargeInput, LargeInputModal, LargeInputPrescription, ProfileInput } from "../Input/Input"
-import { HighInputPrescription, HighInputPrescriptionImage } from "../Input/StyleInput"
-import { Label, LabelPrescription } from "../Label/Label"
-import { InputLabelModal, InputPrescription } from "../Label/StyleLabel"
-import { BoxInput, FieldContent } from "./StyleInputBox"
+import { HighInput, HighInputGrey, LargeInput, ProfileInput } from "../Input/Input"
+import { Label } from "../Label/Label"
+import { BoxInput } from "./StyleInputBox"
 
 
 export const InputBox = ({
@@ -21,7 +19,7 @@ export const InputBox = ({
 
         <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
 
-            <Label textLabel={textLabel} />
+            <Label textLabel={textLabel}/>
 
             <ProfileInput
                 placeholder={placeholder}
@@ -54,9 +52,42 @@ export const HighInputBox = ({
 
         <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
 
-            <Label textLabel={textLabel} />
+            <Label textLabel={textLabel}/>
 
             <HighInput
+                placeholder={placeholder}
+                editable={editable}
+                keyboardType={keyboardType}
+                maxLength={maxLength}
+                fieldValue={fieldValue}
+                onChangeText={onChangeText}
+                placeholderTextColor={placeholderTextColor}
+            />
+
+        </BoxInput>
+
+    )
+}
+
+export const HighInputBoxGrey = ({
+    fieldWidth = 100,
+    fieldHeight = 90,
+    editable = false,
+    textLabel,
+    placeholder,
+    fieldValue = null,
+    onChangeText = null,
+    keyboardType = "default",
+    maxLength,
+    placeholderTextColor
+}) => {
+    return (
+
+        <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
+
+            <Label textLabel={textLabel}/>
+
+            <HighInputGrey
                 placeholder={placeholder}
                 editable={editable}
                 keyboardType={keyboardType}
@@ -87,7 +118,7 @@ export const LargeInputTextBox = ({
 
         <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
 
-            <Label textLabel={textLabel} />
+            <Label textLabel={textLabel}/>
 
             <LargeInput
                 placeholder={placeholder}
@@ -104,7 +135,9 @@ export const LargeInputTextBox = ({
     )
 }
 
-export const LargeInputBoxModal = ({
+
+
+export const LargeInputTextBoxStet = ({
     fieldWidth = 100,
     fieldHeight = 90,
     editable = false,
@@ -120,84 +153,9 @@ export const LargeInputBoxModal = ({
 
         <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
 
-            <InputLabelModal>{textLabel}</InputLabelModal>
+            <Label textLabel={textLabel}/>
 
-            <LargeInputModal
-                placeholder={placeholder}
-                editable={editable}
-                keyboardType={keyboardType}
-                maxLength={maxLength}
-                fieldValue={fieldValue}
-                onChangeText={onChangeText}
-                placeholderTextColor={placeholderTextColor}
-            />
-
-        </BoxInput>
-
-    )
-}
-
-export const BoxInput2 = ({
-    fieldWidth = 100,
-    customHeight = 53,
-    editable = false,
-    textLabel,
-    placeholder,
-    fieldValue = null,
-    onChangeText,
-    keyboardType = 'default',
-    maxLength,
-    customP,
-    multiline,
-    numberOfLines,
-
-
-}) => {
-    return (
-        // "conteúdo do campo" tipo a div sabe?
-        <FieldContent fieldWidth={fieldWidth}>
-            {/* label e input */}
-
-            <InputPrescription>{textLabel}</InputPrescription>
-
-            <ProfileInput
-                numberOfLines={numberOfLines}
-                multiline={multiline}
-                placeholder={placeholder}
-                editable={editable}
-                keyboardType={keyboardType}
-                maxLength={maxLength}
-                fieldValue={fieldValue}
-                onChangeText={onChangeText}
-                customHeight={customHeight}
-                customP={customP}
-            />
-
-        </FieldContent>
-
-    )
-}
-
-
-export const LargeInputBoxPrescription = ({
-    fieldWidth = 90,
-    fieldHeight = 90,
-    editable = false,
-    textLabel,
-    placeholder,
-    fieldValue = null,
-    onChangeText = null,
-    keyboardType = "default",
-    maxLength,
-    placeholderTextColor
-}) => {
-    return (
-
-        <BoxInput fieldWidth={fieldWidth} fieldHeight={fieldHeight} textLabel={textLabel}>
-
-            <InputLabelModal>{textLabel}</InputLabelModal>
-
-            <LargeInputModal
+            <LargeInput
                 placeholder={placeholder}
                 editable={editable}
                 keyboardType={keyboardType}

@@ -10,6 +10,7 @@ import { ButtonLargeConfirmModal, ButtonLargeModal, ButtonLargeSelect } from "..
 
 
 export const ConfirmAppointmentModal = ({
+    navigation,
     visible,
     setShowModal = null,
     ...rest
@@ -53,7 +54,7 @@ export const ConfirmAppointmentModal = ({
 
                     </BoxDescriptions>
 
-                    <ButtonLargeConfirmModal text={"Confirmar"} />
+                    <ButtonLargeConfirmModal onPress={() => { navigation.navigate("PatientConsultation") }} text={"Confirmar"} />
 
                     <CardCancelLess onPressCancel={() => setShowModal(false)} text={"Cancelar"} />
 

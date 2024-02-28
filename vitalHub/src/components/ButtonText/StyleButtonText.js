@@ -7,11 +7,11 @@ export const ButtonText= styled.Text`
     color: #fff;
 `
 
-export const BabyBlueButtonText = styled(ButtonText)`
-    color: #34898F;
+export const ButtonSendText= styled.Text`
     text-transform: capitalize;
-    font-size: 16px;
-    font-family: MontserratAlternates_600SemiBold;
+    font-size: 15px;
+    font-family: MontserratAlternates_700Bold;
+    color: #fff;
 `
 
 export const ButtonTextGoogle = styled.Text`
@@ -29,6 +29,10 @@ export const ButtonTextHome = styled.Text`
 
 export const WhiteButtonText = styled(ButtonTextHome)`
     color: #607EC5;
+`
+
+export const WhiteButtonTextStet = styled(WhiteButtonText)`
+    color: #34898F;
 `
 
 

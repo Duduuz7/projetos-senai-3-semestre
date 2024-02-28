@@ -65,6 +65,7 @@ export const PatientProfile = () => {
                     placeholder={"Ex. 04/05/1999"}
                     keyboardType="numeric"
                     editable={true}
+                    fieldWidth={90}
                 />
                 <InputBox
                     placeholderTextColor={"#A1A1A1"}
@@ -73,6 +74,7 @@ export const PatientProfile = () => {
                     keyboardType="numeric"
                     maxLength={11}
                     editable={true}
+                    fieldWidth={90}
                 />
                 <InputBox
                     placeholderTextColor={"#A1A1A1"}
@@ -80,6 +82,7 @@ export const PatientProfile = () => {
                     placeholder={"Endereço..."}
                     editable={false}
                     fieldValue={logradouro}
+                    fieldWidth={90}
                 />
 
                 <ContainerCepCidade>

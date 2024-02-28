@@ -10,8 +10,9 @@ import { BoxAgeEmailModal } from "./StylePatientAppointmentModal"
 
 
 export const PatientAppointmentModal = ({
+    navigation,
     visible,
-    setShowModalAppointment = null,
+    setShowModal = null,
     ...rest
 }) => {
     return (
@@ -36,9 +37,9 @@ export const PatientAppointmentModal = ({
 
                     </BoxAgeEmailModal>
 
-                    <ButtonLargeConfirmModal text={"Ver Local da Consulta"} />
+                    <ButtonLargeConfirmModal onPress={() => { navigation.navigate("ConsultLocalization") }} text={"Ver Local da Consulta"} />
 
-                    <CardCancelLess onPressCancel={() => setShowModalAppointment(false)} text={"Cancelar"} />
+                    <CardCancelLess onPressCancel={() => setShowModal(false)} text={"Cancelar"} />
 
                 </ModalContent>
 

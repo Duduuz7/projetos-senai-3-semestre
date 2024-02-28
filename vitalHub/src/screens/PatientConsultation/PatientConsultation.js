@@ -13,11 +13,11 @@ import { CancellationModal } from "../../components/CancellationModal/Cancellati
 
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Stethoscope } from "../../components/Stethoscope/StyleSthetoscope"
-import { ScheduleModal } from "../../components/ScheduleModal/ScheduleModal"
+import { ModalStethoscope } from "../../components/Stethoscope/ModalStethoscope"
 import { PatientAppointmentModal } from "../../components/PatientAppointmentModal/PatientAppointmentModal"
 
 
-export const PatientConsultation = () => {
+export const PatientConsultation = ({ navigation }) => {
 
     //STATE PARA O ESTADO DOS CARDS FLATLIST, BOTOES FILTRO
     const [selected, setSelected] = useState({
@@ -39,6 +39,15 @@ export const PatientConsultation = () => {
             age: '22 anos',
             routine: 'Urgência',
             status: "a"
+        },
+        {
+            id: 1,
+            hour: '14:00',
+            image: image,
+            name: 'Dr josé',
+            age: '23 anos',
+            routine: 'Urgência',
+            status: "r"
         }
     ]
 
@@ -63,6 +72,7 @@ export const PatientConsultation = () => {
 
     const [showModalCancel, setShowModalCancel] = useState(false);
     const [showModalAppointment, setShowModalAppointment] = useState(false);
+    const [showModalStethoscope, setShowModalStethoscope] = useState(false);
 
     const [showModal, setShowModal] = useState(false);
 
@@ -109,7 +119,7 @@ export const PatientConsultation = () => {
             <FlatContainer
                 data={data}
                 renderItem={({ item }) =>
-                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointmentCard={() => setShowModalAppointment(true)} onPressCard={() => {() => setShowModalAppointment(true)}}/>}
+                    <Card navigation={navigation} hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointment={() => { navigation.navigate("ViewPrescription") }} onPressAppointmentCard={() => setShowModal(item.status === 'a' ? true : false)} />}
 
                 keyExtractor={item => item.id}
 
@@ -117,7 +127,7 @@ export const PatientConsultation = () => {
 
             />
 
-            <Stethoscope onPress={() => setShowModal(true)}>
+            <Stethoscope onPress={() => setShowModalStethoscope(true)}>
 
                 <FontAwesome6
                     name="stethoscope"
@@ -132,16 +142,18 @@ export const PatientConsultation = () => {
                 setShowModalCancel={setShowModalCancel}
             />
 
+            <ModalStethoscope
+                navigation={navigation}
+                visible={showModalStethoscope}
+                setShowModalStethoscope={setShowModalStethoscope}
+            />
 
-            <ScheduleModal
+            <PatientAppointmentModal
+                navigation={navigation}
                 visible={showModal}
                 setShowModal={setShowModal}
             />
 
-            <PatientAppointmentModal
-                visible={showModalAppointment}
-                setShowModalAppointment={setShowModalAppointment}
-            />  
 
 
         </Container>

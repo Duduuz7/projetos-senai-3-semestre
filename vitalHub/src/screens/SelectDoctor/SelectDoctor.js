@@ -6,7 +6,7 @@ import { ButtonLarge, ButtonLargeSelect } from "../../components/Button/Button"
 import { CancelLessMargin } from "../../components/Descriptions/StyledDescriptions"
 
 
-export const SelectDoctor = () => {
+export const SelectDoctor = ({navigation}) => {
 
     const image = require("../../assets/ImageCard.png");
     const dataItens = [
@@ -32,36 +32,28 @@ export const SelectDoctor = () => {
 
     return (
 
-        <ScrollContainer>
 
+
+        <Container>
             <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
-            <Container>
+            <TitleSelect>Selecionar Médico</TitleSelect>
 
-                <TitleSelect>Selecionar Médico</TitleSelect>
+            <FlatContainerSelect
+                data={dataItens}
+                renderItem={({ item }) =>
+                    <CardSelectDoctor doctorArea={item.doctorArea} name={item.name} url={image} />}
+                keyExtractor={item => item.id}
 
-                <FlatContainerSelect
-                    data={dataItens}
-                    renderItem={({ item }) =>
-                        <CardSelectDoctor doctorArea={item.doctorArea} name={item.name} url={image} />}
-                    keyExtractor={item => item.id}
+                showsVerticalScrollIndicator={false}
+            />
 
-                    showsVerticalScrollIndicator={false}
-                />
+            <ButtonLargeSelect onPress={() => { navigation.navigate("SelectDate") }} text={"Continuar"} />
 
-                {/* <CardSelectDoctor doctorArea={'Dermatóloga, Esteticista'} url={require('../../assets/DermaImage.png')} name={'Dr Alessandra'} />
+            <CancelLessMargin>Cancelar</CancelLessMargin>
 
-            <CardSelectDoctor doctorArea={'Cirurgião, Cardiologista'} url={require('../../assets/DermaImage.png')} name={'Dr Kumushiro'} />
+        </Container>
 
-            <CardSelectDoctor doctorArea={'Clínico, Pediatra'} url={require('../../assets/DermaImage.png')} name={'Dr Rodrigo Santos'} /> */}
-
-                <ButtonLargeSelect text={"Continuar"} />
-
-                <CancelLessMargin>Cancelar</CancelLessMargin>
-
-            </Container>
-
-        </ScrollContainer>
 
     )
 

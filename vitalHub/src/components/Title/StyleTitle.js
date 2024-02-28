@@ -8,19 +8,8 @@ export const Title = styled.Text`
     color: #33303E;
 `
 
-export const TitleLocalization = styled(Title)`
-    color: #000000;
-    margin-top: 25px;
-    margin-bottom: 7px
-`
-
 export const TitleModal = styled(Title)`
     margin-bottom: 0px;
-`
-
-export const TitleModalSchedule = styled(Title)`
-    margin-bottom: 4px;
-    margin-top: 12px;
 `
 
 export const TitleModalRecord = styled(TitleModal)`
@@ -75,4 +64,10 @@ export const NameCardSelect = styled.Text`
 
 export const NameCardClinic = styled(NameCardSelect)`
     margin-top: 3%;
+`
+
+export const TitleLocalization = styled(Title)`
+    color: #000000;
+    margin-top: 25px;
+    margin-bottom: 7px
 `

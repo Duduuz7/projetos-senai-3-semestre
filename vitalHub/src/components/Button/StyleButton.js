@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
 
-export const NormalButton= styled.TouchableOpacity`
+export const NormalButton = styled.TouchableOpacity`
     margin-top: 32px;
     border-radius: 8px;
-    width: 80%;
+    width: 90%;
     background-color: #496BBA;
     height: 60px;
     align-items: center;
@@ -13,7 +13,22 @@ export const NormalButton= styled.TouchableOpacity`
     border-color: #496BBA;
     `
 
-export const GoogleButton= styled(NormalButton)`
+export const ButtonSend = styled.TouchableOpacity`
+/* margin-top: 32px; */
+border-radius: 5px;
+width: 172px;
+background-color: #49B3BA;
+height: 48px;
+align-items: center;
+justify-content: center;
+border-width: 1px;
+border-color: #49B3BA;
+flex-direction: row;
+gap: 10px;
+`
+
+
+export const GoogleButton = styled(NormalButton)`
     margin-top: 20px; 
     gap: 27px;
     justify-content: center;
@@ -21,7 +36,7 @@ export const GoogleButton= styled(NormalButton)`
     background-color: #fff;
 `
 
-export const LargeButton= styled(NormalButton)`
+export const LargeButton = styled(NormalButton)`
     width: 91%;
     height: 52px;
     margin-top: 0px;
@@ -51,22 +66,40 @@ export const ButtonHome = styled.TouchableOpacity`
     margin-bottom: 10px;
 `
 
+export const ButtonHomeStet = styled(ButtonHome)`
+    width: 88px;
+    background-color: #60BFC5;
+    border: 1px solid #60BFC5;
+    margin-top: 0;
+    margin-bottom: 0;
+    `
+
 export const WhiteButtonHome = styled(ButtonHome)`
     background-color: #FBFBFB;
     border: 2px solid #607EC5;
+    height: 44px;
 `
-export const LargeButtonSelect= styled(LargeButton)`
+
+export const WhiteButtonHomeStet = styled(WhiteButtonHome)`
+    border: 2px solid #60BFC5;
+    width: 88px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+`
+export const LargeButtonSelect = styled(LargeButton)`
     width: 91%;
     height: 50px;
     margin-top: 30px;
     margin-bottom: 25px;
 `
 
-export const LargeButtonModal = styled(LargeButton)`
+export const BoxButtons = styled.SafeAreaView`
     width: 100%;
-    height: 50px;
-    margin-top: 59%;
-    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 42px;
 `
 
 export const LargeButtonConfirmModal = styled(LargeButton)`
@@ -75,14 +108,3 @@ export const LargeButtonConfirmModal = styled(LargeButton)`
     margin-top: 4%;
     margin-bottom: 25px;
 `
-
-export const SmallButton = styled.TouchableOpacity`
-width: 30%;
-height: 55px;
-padding-top:16px;
-font-family: "MontserratAlternates_600SemiBold";
-border: 2px solid  #60BFC5;
-border-radius: 10px;
-display: flex;
-align-items:center;
-`;

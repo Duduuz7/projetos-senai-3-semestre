@@ -2,21 +2,21 @@ import styled, { css } from "styled-components";
 
 
 export const CardContainer = styled.TouchableOpacity`
+    elevation: 3px;
     margin-top: 12px;
+    margin-bottom: 5px;
     align-self: center;
-    align-itens: center;
+    align-items: center;
     background-color: #fff;
     border-radius: 5px;
     padding: 10px;
     width: 90%;
-    height: 106px;
-    elevation: 0px;
+    height: 105px;
     flex-direction: row;
 `
 
 export const CardContainerClinic = styled(CardContainer)`
     height: 85px;
-    elevation: 4px;
 `
 
 export const AgeCard = styled.SafeAreaView`
@@ -25,7 +25,7 @@ export const AgeCard = styled.SafeAreaView`
     flex-direction: row;
     width: 100px;
     height: 30px;
-    box-radius: 5px;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
 `

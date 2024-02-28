@@ -1,5 +1,5 @@
 import { Modal } from "react-native"
-import { ButtonLargeConfirmModal, ButtonLargeModal, ButtonLargeSelect } from "../Button/Button"
+import { ButtonLargeSelect } from "../Button/Button"
 import { ModalContent, PatientModal } from "../CancellationModal/StyleCancelationModal"
 import { CardCancelLess } from "../Descriptions/Descriptions"
 import { DescriptionModalRecord } from "../Descriptions/StyledDescriptions"
@@ -35,7 +35,7 @@ export const AppointmentModal = ({
 
                     </BoxAgeEmailModal>
 
-                    <ButtonLargeConfirmModal text={"Inserir Prontuário"} />
+                    <ButtonLargeSelect text={"Inserir Prontuário"} />
 
                     <CardCancelLess onPressCancel={() => setShowModalAppointment(false)} text={"Cancelar"} />
 

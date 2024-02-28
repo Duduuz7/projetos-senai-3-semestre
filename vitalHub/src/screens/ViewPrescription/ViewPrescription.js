@@ -1,47 +1,85 @@
-import { BoxAgeEmail, Container, ScrollContainer } from "../../components/Container/StyleContainer"
-import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
-import { DescripritionPrescription } from "../../components/Descriptions/StyledDescriptions"
-import { ImagemPerfilPaciente } from "../../components/Images/StyleImages"
-import { HighInputBoxPrescription, HighInputBoxPrescriptionImage, LargeInputBoxModal, LargeInputBoxPrescription, LargeInputTextBoxPrescription } from "../../components/InputBox/InputBox"
-
-
+import { SendButton } from "../../components/Button/Button"
+import { ButtonSend } from "../../components/Button/StyleButton"
+import { BoxAgeEmail, BoxBtn, BoxDescription, BoxViewImageImport, Container, ScrollContainer, ViewImageImport } from "../../components/Container/StyleContainer"
+import { CardBackLess, CardCancel, CardCancelLess, DescriptionDoc, DescriptionPassword } from "../../components/Descriptions/Descriptions"
+import { ViewImage } from "../../components/Images/StyleImages"
+import { HighInputBox, HighInputBoxGrey, InputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
+import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
-
-import { AntDesign } from "@expo/vector-icons";
+import { Line, TitleImage } from "./Style"
 
 export const ViewPrescription = () => {
-
     return (
+        <>
+            <ScrollContainer>
 
-        <ScrollContainer>
+                <Container>
 
-            <Container>
+                    <ViewImage source={require("../../assets/ney.webp")} />
 
-                <ImagemPerfilPaciente source={require('../../assets/ney.webp')} />
+                    <TitleProfile>Dr. Ney</TitleProfile>
 
-                <TitleProfile>Dr. Neymar Jr</TitleProfile>
+                    <BoxDescription>
+                        <DescriptionDoc description={"Cliníco geral"} />
+                        <DescriptionDoc description={"CRM-15286"} />
+                    </BoxDescription>
 
-                <BoxAgeEmail>
-
-                    <DescripritionPrescription>Clínico Geral</DescripritionPrescription>
-                    <DescripritionPrescription>CRM-15286</DescripritionPrescription>
-
-                </BoxAgeEmail>
-
-                <LargeInputBoxPrescription
-                        fieldWidth={90}
-                        placeholderTextColor={"#34898F"}
-                        textLabel={"Informe a localização desejada"}
-                        placeholder={"Informe a localização"}
+                    <HighInputBoxGrey
+                        fieldHeight={350}
+                        placeholderTextColor={"#A1A1A1"}
+                        textLabel={"Descrição da consulta"}
+                        placeholder={"Descrição"}
                         editable={true}
+                        fieldWidth={90}
                     />
 
-                
+                    <InputBox
+                        placeholderTextColor={"#A1A1A1"}
+                        textLabel={"Diagnóstico do paciente"}
+                        placeholder={"Diagnóstico"}
+                        editable={true}
+                        fieldWidth={90}
+                    />
 
-            </Container>
+                    <HighInputBoxGrey
+                        // fieldHeight={350}
+                        placeholderTextColor={"#A1A1A1"}
+                        textLabel={"Prescrição médica"}
+                        placeholder={"Prescrição"}
+                        editable={true}
+                        fieldWidth={90}
+                    />
 
-        </ScrollContainer>
+                    <BoxViewImageImport>
+                        
+                        <Label textLabel={"Exames médicos"} />
 
+                        <ViewImageImport>
+                            <TitleImage>{"[ ! ] Nenhuma foto informada"}</TitleImage>
+                        </ViewImageImport>
+
+                    </BoxViewImageImport>
+
+                    <BoxBtn>
+                        <SendButton text={"Enviar"} />
+                        <CardCancel text={"Cancelar"} />
+                    </BoxBtn>
+
+                    <Line/>
+
+                    <HighInputBoxGrey
+                        // fieldHeight={350}
+                        placeholderTextColor={"#A1A1A1"}
+                        placeholder={"Resultado do exame"}
+                        editable={true}
+                        fieldWidth={90}
+                    />
+
+                    <CardBackLess text={"Voltar"}/>
+
+                </Container>
+
+            </ScrollContainer>
+        </>
     )
-
 }

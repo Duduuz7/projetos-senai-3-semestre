@@ -82,11 +82,10 @@ export const DoctorConsultation = () => {
     // RETURN
 
     return (
-
         <Container>
+                <StatusBar translucent backgroundColor="transparent" />
             <Header>
 
-                <StatusBar translucent backgroundColor="transparent" />
 
                 <BoxHome>
 

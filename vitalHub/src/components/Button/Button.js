@@ -1,6 +1,8 @@
-import { BabyBlueButtonText, ButtonText, ButtonTextGoogle, ButtonTextHome, WhiteButtonText } from "../ButtonText/StyleButtonText";
-import { ButtonBlocked, ButtonHome, GoogleButton, LargeButton, LargeButtonConfirmModal, LargeButtonModal, LargeButtonSelect, NormalButton, SmallButton, SmallButtonBlocked, WhiteButtonHome } from "./StyleButton";
+import { ButtonSendText, ButtonText, ButtonTextGoogle, ButtonTextHome, WhiteButtonText, WhiteButtonTextStet } from "../ButtonText/StyleButtonText";
+import { Label } from "../Label/Label";
+import { ButtonBlocked, ButtonHome, ButtonHomeStet, ButtonSend, GoogleButton, LargeButton, LargeButtonConfirmModal, LargeButtonSelect, NormalButton, SmallButtonBlocked, WhiteButtonHome, WhiteButtonHomeStet } from "./StyleButton";
 import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export const ButtonNormal = ({
     onPress,
@@ -9,8 +11,21 @@ export const ButtonNormal = ({
     return (
         <NormalButton
             onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </NormalButton>
+    );
+}
+
+export const SendButton = ({
+    onPress,
+    text
+}) => {
+    return (
+        <ButtonSend
+            onPress={onPress}>
+            <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
+            <ButtonSendText>{text}</ButtonSendText>
+        </ButtonSend>
     );
 }
 
@@ -21,8 +36,8 @@ export const ButtonGoogle = ({
     return (
         <GoogleButton
             onPress={onPress}>
-                <AntDesign name="google" size={18} color="#496BBA" />
-                <ButtonTextGoogle>{text}</ButtonTextGoogle>
+            <AntDesign name="google" size={18} color="#496BBA" />
+            <ButtonTextGoogle>{text}</ButtonTextGoogle>
         </GoogleButton>
     );
 }
@@ -34,7 +49,7 @@ export const ButtonLarge = ({
     return (
         <LargeButton
             onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </LargeButton>
     );
 }
@@ -46,32 +61,8 @@ export const ButtonLargeSelect = ({
     return (
         <LargeButtonSelect
             onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </LargeButtonSelect>
-    );
-}
-
-export const ButtonLargeModal = ({
-    onPress,
-    text
-}) => {
-    return (
-        <LargeButtonModal
-            onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
-        </LargeButtonModal>
-    );
-}
-
-export const ButtonLargeConfirmModal = ({
-    onPress,
-    text
-}) => {
-    return (
-        <LargeButtonConfirmModal
-            onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
-        </LargeButtonConfirmModal>
     );
 }
 
@@ -82,7 +73,7 @@ export const BlockedButton = ({
     return (
         <ButtonBlocked
             onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </ButtonBlocked>
     );
 }
@@ -94,31 +85,43 @@ export const BlockedSmallButton = ({
     return (
         <SmallButtonBlocked
             onPress={onPress}>
-                <ButtonText>{text}</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </SmallButtonBlocked>
     );
 }
 
-export const FilterButton = ({selected = false, text, onPress = null}) => {
-    return(
+export const FilterButton = ({ selected = false, text, onPress = null }) => {
+    return (
         <>
-             {selected ?  
-            <ButtonHome selected={selected} onPress={onPress}><ButtonTextHome>{text}</ButtonTextHome></ButtonHome>
-             : 
-            <WhiteButtonHome selected={selected} onPress={onPress}><WhiteButtonText>{text}</WhiteButtonText></WhiteButtonHome>
-             } 
+            {selected ?
+                <ButtonHome selected={selected} onPress={onPress}><ButtonTextHome>{text}</ButtonTextHome></ButtonHome>
+                :
+                <WhiteButtonHome selected={selected} onPress={onPress}><WhiteButtonText>{text}</WhiteButtonText></WhiteButtonHome>
+            }
         </>
     )
 }
 
-export const SmallButtonModal = ({
+export const FilterButtonStet = ({ selected = false, text, onPress = null }) => {
+    return (
+        <>
+            {selected ?
+                <ButtonHomeStet selected={selected} onPress={onPress}><ButtonTextHome>{text}</ButtonTextHome></ButtonHomeStet>
+                :
+                <WhiteButtonHomeStet selected={selected} onPress={onPress}><WhiteButtonTextStet>{text}</WhiteButtonTextStet></WhiteButtonHomeStet>
+            }
+        </>
+    )
+}
+
+export const ButtonLargeConfirmModal = ({
     onPress,
     text
 }) => {
     return (
-        <SmallButton
+        <LargeButtonConfirmModal
             onPress={onPress}>
-                <BabyBlueButtonText>{text}</BabyBlueButtonText>
-        </SmallButton>
+                <ButtonText>{text}</ButtonText>
+        </LargeButtonConfirmModal>
     );
 }

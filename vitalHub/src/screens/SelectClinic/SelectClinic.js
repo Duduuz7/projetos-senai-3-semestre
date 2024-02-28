@@ -7,7 +7,7 @@ import { CancelLessMargin } from "../../components/Descriptions/StyledDescriptio
 import { TitleSelect } from "../../components/Title/StyleTitle"
 
 
-export const SelectCLinic = () => {
+export const SelectCLinic = ({ navigation }) => {
 
     const dataItens = [
         {
@@ -72,7 +72,7 @@ export const SelectCLinic = () => {
                     showsVerticalScrollIndicator={false}
                 />
 
-                <ButtonLargeSelect text={"Continuar"} />
+                <ButtonLargeSelect onPress={() => { navigation.navigate("SelectDoctor") }} text={"Continuar"} />
 
                 <CancelLessMargin>Cancelar</CancelLessMargin>
 

@@ -57,3 +57,9 @@ export const MapImage = styled.Image`
     width: 100%;
     height: 370px;
 `
+
+export const ViewImage = styled.Image`
+width: 100%;
+height: 280px;
+margin-bottom: 20px;
+`

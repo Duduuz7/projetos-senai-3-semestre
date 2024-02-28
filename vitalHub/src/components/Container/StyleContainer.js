@@ -11,7 +11,7 @@ export const ViewBoxMedium = styled.SafeAreaView`
     align-items: flex-start;
 `
 export const BoxNumeric = styled.SafeAreaView`
-    width: 80%;
+    width: 90%;
     flex-direction: row;
     margin-top: 15px;
     justify-content: space-between;
@@ -28,8 +28,8 @@ export const ContainerCepCidade = styled.SafeAreaView`
     width: 100%;
     background-color: #fafafa;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 50px;
+    justify-content: space-around;
+    /* gap: 50px; */
     margin-bottom: 35px;
 `
 
@@ -39,6 +39,14 @@ export const BoxAgeEmail = styled.SafeAreaView`
     margin-top: 2px;
     margin-right: 35px;
     margin-left: 35px;
+`
+
+export const BoxDescription = styled.SafeAreaView`
+    flex-direction: row;
+    margin-top: 2px;
+    margin-right: 35px;
+    margin-left: 35px;
+    gap: 20px;
 `
 
 export const BoxDataHome = styled.SafeAreaView`
@@ -83,8 +91,13 @@ export const ButtonHomeContainer = styled.SafeAreaView`
     flex-direction: row;
     gap: 15px;
 `
-export const ButtonModalContainer = styled(ButtonHomeContainer)`
-    margin-left: 0;
+
+export const ButtonHomeContainerStet = styled.SafeAreaView`
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
 `
 
 export const BoxCard = styled.SafeAreaView`
@@ -105,7 +118,7 @@ export const BoxTextDoctorCard = styled(BoxTextCard)`
 export const BoxTextClinicCard = styled(BoxTextCard)`
     margin-left: 10px;
     gap: 8px;
-    margin-top: -8px
+    margin-top: -8px;
 `
 
 
@@ -130,4 +143,35 @@ width: 100%;
 export const FlatContainerSelect = styled(FlatContainer)`
 width: 100%;
 height: 550px;
+`
+
+export const BoxInputSelectLabel = styled.SafeAreaView`
+    margin-top: 30px;
+    gap: 10px;
+`
+
+export const ViewImageImport = styled.SafeAreaView`
+    width: 100%;
+    height: 111px;
+    background-color: #F5F3F3;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+`
+
+export const BoxViewImageImport = styled.SafeAreaView`
+    margin-top: 18px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+`
+
+export const BoxBtn = styled.SafeAreaView`
+    margin-top: 13px;
+    flex-direction: row;
+    /* gap: 60px; */
+    width: 90%;
+    /* justify-content: space-around; */
+    gap: 80px;
 `

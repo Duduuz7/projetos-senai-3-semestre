@@ -1,19 +1,18 @@
 import { StatusBar } from "react-native"
-import { Container } from "../../components/Container/StyleContainer"
+import { BoxInputSelectLabel, Container } from "../../components/Container/StyleContainer"
 import { TitleSelect } from "../../components/Title/StyleTitle"
 import CalendarComponent from "../../components/CalendarComponent/CalendarComponent"
-import { ButtonLargeSelect } from "../../components/Button/Button"
-import { CardCancelLess } from "../../components/Descriptions/Descriptions"
-import { InputSelect } from "../../components/InputSelect/InputSelect"
+import { InputSelect } from "../../components/Input/Input"
 import { Label, LabelSelect } from "../../components/Label/Label"
-import { ConfirmAppointmentModal } from "../../components/ConfirmAppointmentModal/ConfirmAppointmentModal"
+import { ButtonLarge, ButtonNormal } from "../../components/Button/Button"
+import { CardCancelLess } from "../../components/Descriptions/Descriptions"
+import { BoxButtons } from "../../components/Button/StyleButton"
 import { useState } from "react"
+import { ConfirmAppointmentModal } from "../../components/ConfirmAppointmentModal/ConfirmAppointmentModal"
 
 
-export const SelectDate = () => {
-
+export const SelectDate = ( {navigation} ) => {
     const [showModal, setShowModal] = useState(false);
-
     return (
 
         <Container>
@@ -24,15 +23,20 @@ export const SelectDate = () => {
 
             <CalendarComponent />
 
-            <LabelSelect textLabel={"Selecione um horário disponível"} />
+            <BoxInputSelectLabel>
+                <LabelSelect textLabel={'Selecione um horário disponível'} />
+                <InputSelect />
+            </BoxInputSelectLabel>
 
-            <InputSelect />
 
-            <ButtonLargeSelect onPress={() => setShowModal(true)} text={"Continuar"} />
+            <BoxButtons>
+                <ButtonLarge onPress={() => setShowModal(true)} text={'Confirmar'} />
 
-            <CardCancelLess onPressCancel={() => setShowModal(false)}  text={"Cancelar"} />
+                <CardCancelLess text={"Cancelar"} />
+            </BoxButtons>
 
             <ConfirmAppointmentModal
+                navigation={navigation}
                 visible={showModal}
                 setShowModal={setShowModal}
             />

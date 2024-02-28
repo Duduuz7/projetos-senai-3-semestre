@@ -35,6 +35,7 @@ export const MedicalRecords = () => {
                     textLabel={"Descrição da consulta"}
                     placeholder={"Descrição"}
                     editable={true}
+                    fieldWidth={90}
                 />
 
                 <LargeInputTextBox
@@ -42,6 +43,7 @@ export const MedicalRecords = () => {
                     textLabel={"Diagnóstico do paciente"}
                     placeholder={"Diagnóstico"}
                     editable={true}
+                    fieldWidth={90}
                 />
 
                 <HighInputBox
@@ -50,6 +52,7 @@ export const MedicalRecords = () => {
                     textLabel={"Prescrição médica"}
                     placeholder={"Prescriçao médica"}
                     editable={true}
+                    fieldWidth={90}
                 />
 
                 <ButtonNormal text={"Salvar"}/>

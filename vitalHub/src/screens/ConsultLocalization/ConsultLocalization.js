@@ -23,6 +23,7 @@ export const ConsultLocalization = () => {
                 placeholder={"Ex. Rua Vicenso Silva, 58"}
                 // keyboardType="numeric"
                 editable={true}
+                fieldWidth={90}
             />
 
             <ContainerCepCidade>

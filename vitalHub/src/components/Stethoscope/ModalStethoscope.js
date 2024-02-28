@@ -9,6 +9,7 @@ import { Label } from "../Label/Label"
 import { CardCancelLess } from "../Descriptions/Descriptions"
 
 export const ModalStethoscope = ({
+    navigation,
     visible,
     setShowModalStethoscope,
     ...rest
@@ -32,16 +33,16 @@ export const ModalStethoscope = ({
                     <TitleModal>Agendar Consulta</TitleModal>
 
                     <ContainerLabel>
-                    <Label textLabel={'Qual o nível da consulta'}/>
-                    <ButtonHomeContainerStet>
+                        <Label textLabel={'Qual o nível da consulta'} />
+                        <ButtonHomeContainerStet>
 
-                        <FilterButtonStet onPress={() => { setSelected({ rotina: true }) }} selected={selected.rotina} text={'Rotina'} />
+                            <FilterButtonStet onPress={() => { setSelected({ rotina: true }) }} selected={selected.rotina} text={'Rotina'} />
 
-                        <FilterButtonStet onPress={() => { setSelected({ exame: true }) }} selected={selected.exame} text={'Exame'} />
+                            <FilterButtonStet onPress={() => { setSelected({ exame: true }) }} selected={selected.exame} text={'Exame'} />
 
-                        <FilterButtonStet onPress={() => { setSelected({ urgencia: true }) }} selected={selected.urgencia} text={'Urgencia'} />
+                            <FilterButtonStet onPress={() => { setSelected({ urgencia: true }) }} selected={selected.urgencia} text={'Urgencia'} />
 
-                    </ButtonHomeContainerStet>
+                        </ButtonHomeContainerStet>
                     </ContainerLabel>
 
                     <LargeInputTextBoxStet
@@ -52,9 +53,11 @@ export const ModalStethoscope = ({
                     />
 
                     <FlexButtons>
-                    <ButtonLargeSelect onPress={''} text={"Continuar"} />
-                    <CardCancelLess onPressCancel={() => setShowModalStethoscope(false)} text={"Cancelar"}/>
+                        <ButtonLargeSelect onPress={() => { navigation.navigate("SelectClinic") }} text={"Continuar"} />
+
+                        <CardCancelLess onPressCancel={() => setShowModalStethoscope(false)} text={"Cancelar"} />
                     </FlexButtons>
+
                 </ModalStetContent>
             </StethoscopeModal>
         </Modal>
