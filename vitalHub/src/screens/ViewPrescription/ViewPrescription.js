@@ -8,7 +8,7 @@ import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
 import { Line, TitleImage } from "./Style"
 
-export const ViewPrescription = () => {
+export const ViewPrescription = ({ navigation }) => {
     return (
         <>
             <ScrollContainer>
@@ -75,7 +75,7 @@ export const ViewPrescription = () => {
                         fieldWidth={90}
                     />
 
-                    <CardBackLess text={"Voltar"}/>
+                    <CardBackLess onPressCancel={() => { navigation.navigate("PatientConsultation") }} text={"Voltar"}/>
 
                 </Container>
 

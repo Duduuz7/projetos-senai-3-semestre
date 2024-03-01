@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Logo = styled.Image`
     width: 214px;
     height: 120px;
-    margin: 20px 0px;
+    margin: 80px 0px;
 `
 export const LogoCreateAccount = styled.Image`
     margin-bottom: 20px;
@@ -63,3 +63,10 @@ width: 100%;
 height: 280px;
 margin-bottom: 20px;
 `
+
+
+
+export const BrandLogoWhite = styled.Image`
+    width:300px;
+    height:150px;
+  `

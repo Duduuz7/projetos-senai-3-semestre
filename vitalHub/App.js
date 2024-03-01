@@ -19,6 +19,8 @@ import { PatientConsultation } from './src/screens/PatientConsultation/PatientCo
 import { SelectDate } from './src/screens/SelectDate/SelectDate';
 import { ConsultLocalization } from './src/screens/ConsultLocalization/ConsultLocalization';
 import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrescription';
+import Splash from './src/screens/Splash/Splash';
+import { Main } from './src/components/Main/Main';
 
 
 const Stack = createNativeStackNavigator();
@@ -56,6 +58,12 @@ export default function App() {
       }}   >
 
         <Stack.Screen
+          name="Splash"
+          component={Splash}
+          options={{ title: 'Splash' }}
+        />
+
+        <Stack.Screen
           name="Navegação"
           component={Navegacao}
           options={{ title: 'Navegação' }}
@@ -67,6 +75,11 @@ export default function App() {
           options={{ title: 'Login' }}
         />
 
+        <Stack.Screen
+          name="Main"
+          component={Main}
+
+        />
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPassword}

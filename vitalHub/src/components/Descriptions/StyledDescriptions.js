@@ -78,6 +78,14 @@ export const CancelLessMargin = styled(CancelButton)`
     justify-self: center;
 `
 
+export const CancelLocal = styled(CancelButton)`
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+`
+
 export const CancelBackMargin = styled(CancelButton)`
     margin-top: 30px;
     margin-bottom: 42px;
@@ -85,7 +93,11 @@ export const CancelBackMargin = styled(CancelButton)`
     margin-right: 0;
     text-align: center;
 `
-
+export const TextNormalBar = styled.Text`
+    color: #595663;
+    font-family: Quicksand_500Medium;
+    margin-bottom: 2px;
+`
 
 export const CancelButtonRecords = styled(CancelButton)`
     margin-top:25px;
@@ -172,3 +184,11 @@ export const SmallDescriptionModal = styled(DescripritionForgot)`
     text-align: none;
     margin-bottom: 20px;
 `
+
+export const TextSplash = styled.Text`
+	color: #fff;
+	font-family: Quicksand_600SemiBold;
+	font-size: 18px;
+	text-align: center;
+	width: 203px;
+`;

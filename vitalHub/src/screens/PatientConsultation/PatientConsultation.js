@@ -154,7 +154,7 @@ export const PatientConsultation = ({ navigation }) => {
                 setShowModal={setShowModal}
             />
 
-
+            {/* <Main />  */}
 
         </Container>
 

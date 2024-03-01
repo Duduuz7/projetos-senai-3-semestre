@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { LinearGradient } from "expo-linear-gradient";
+
 export const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
@@ -174,4 +176,13 @@ export const BoxBtn = styled.SafeAreaView`
     width: 90%;
     /* justify-content: space-around; */
     gap: 80px;
+`
+
+
+export const GradientScreen = styled(LinearGradient).attrs({
+  colors: ['#49B3BA', '#496BBA']
+})`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `

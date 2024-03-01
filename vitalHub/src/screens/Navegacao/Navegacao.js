@@ -3,7 +3,7 @@ import { Button, View } from "react-native"
 export const Navegacao = ({ navigation }) => {
     return (
 
-        <View>
+        <View style={{ marginTop: 40 }}>
             <Button
                 title="Login"
                 onPress={() => navigation.navigate("Login")}

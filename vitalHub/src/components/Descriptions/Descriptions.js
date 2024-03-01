@@ -1,5 +1,5 @@
 import { ViewBoxCode } from "../Container/StyleContainer";
-import {CancelBackMargin, CancelCard, CancelLessMargin, DescripritionDoctor, DescripritionEmail, DescripritionForgot, EmailText, ResendCode, SeeMedicalRecord, SmallDescriptionModal, SmallDescriptionModal2 } from "./StyledDescriptions";
+import {CancelBackMargin, CancelCard, CancelLessMargin, CancelLocal, DescripritionDoctor, DescripritionEmail, DescripritionForgot, EmailText, ResendCode, SeeMedicalRecord, SmallDescriptionModal, SmallDescriptionModal2 } from "./StyledDescriptions";
 
 export const DescriptionPassword = ({ description }) => {
 
@@ -73,6 +73,16 @@ export const CardCancelLess = ({ onPressCancel, text }) => {
 
 }
 
+export const CardCancelLessLocal = ({ onPressCancel, text }) => {
+
+    return(
+
+        <CancelLocal onPress={onPressCancel}>{text}</CancelLocal>
+
+    )
+
+}
+
 export const CardBackLess = ({ onPressCancel, text }) => {
 
     return(
@@ -97,6 +107,16 @@ export const DescripritionModalSmall = ({text }) => {
     return(
 
         <SmallDescriptionModal>{text}</SmallDescriptionModal>
+
+    )
+
+}
+
+export const TextBarNormal = ({ onPress, text }) => {
+
+    return(
+
+        <SmallDescriptionModal onPress={onPress}>{text}</SmallDescriptionModal>
 
     )
 

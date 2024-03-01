@@ -54,7 +54,7 @@ export const ConfirmAppointmentModal = ({
 
                     </BoxDescriptions>
 
-                    <ButtonLargeConfirmModal onPress={() => { navigation.navigate("PatientConsultation") }} text={"Confirmar"} />
+                    <ButtonLargeConfirmModal onPress={() => { navigation.navigate("Main") }} text={"Confirmar"} />
 
                     <CardCancelLess onPressCancel={() => setShowModal(false)} text={"Cancelar"} />
 

@@ -33,9 +33,9 @@ export const Login = ({navigation}) => {
 
             <LinkMedium textLink={"Esqueceu sua senha ?"} onPress={() => navigation.navigate("ForgotPassword")} />
 
-            <ButtonNormal text={"Entrar"}/>
+            <ButtonNormal onPress={() => navigation.navigate("Main")} text={"Entrar"}/>
 
-            <ButtonGoogle text={"Entrar com Google"}/>
+            <ButtonGoogle onPress={() => navigation.navigate("Main")} text={"Entrar com Google"}/>
 
             <LinkAccount onPress={() => navigation.navigate("CreateAccount")}/>
 
