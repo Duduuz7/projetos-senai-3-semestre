@@ -14,12 +14,12 @@ import { TextBarNormal } from "../Descriptions/Descriptions";
 
 const bottomTab = createBottomTabNavigator();
 
-export const Main = ({ navigation }) => {
+export const Main = () => {
   return (
     <bottomTab.Navigator
       initialRouteName="PatientConsultation"
       screenOptions={({ route }) => ({
-        tabBarStyle: { height: 60 },
+        tabBarStyle: { height: 60, elevation: 10,},
         tabBarInactiveBackgroundColor: "transparent",
         tabBarActiveBackgroundColor: "#ECF2FF",
         tabBarShowLabel: false,
