@@ -1,44 +1,53 @@
+import { Title } from "../../components/Title/StyleTitle";
+import { Container } from "../../components/Container/StyleContainer";
+import { Logo } from "../../components/Images/StyleImages";
+import { Input } from "../../components/Input/Input";
+import { LinkMedium } from "../../components/TextMedium/TextMedium";
+import { LinkAccount } from "../../components/Link/Link";
 
-import { Title } from "../../components/Title/StyleTitle"
-import { Container } from "../../components/Container/StyleContainer"
-import { Logo } from "../../components/Images/StyleImages"
-import { Input } from "../../components/Input/Input"
-import { LinkMedium } from "../../components/TextMedium/TextMedium"
-import { LinkAccount } from "../../components/Link/Link"
+import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button";
+import { StatusBar } from "react-native";
 
-import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button"
-import { StatusBar } from "react-native"
+export const Login = ({ navigation }) => {
+  return (
+    <Container>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
 
-export const Login = ({navigation}) => {
-    return (
+      <Logo source={require("../../assets/VitalHub_Logo1.png")} />
 
-        <Container>
+      <Title>Entrar ou criar conta</Title>
 
-            <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
+      <Input
+        placeholder={"Usuário ou E-mail"}
+        placeholderTextColor={"#49B3BA"}
+      />
 
-            <Logo source={require('../../assets/VitalHub_Logo1.png')} />
+      <Input
+        placeholder={"Senha"}
+        placeholderTextColor={"#49B3BA"}
+        secureTextEntry={true}
+      />
 
-            <Title>Entrar ou criar conta</Title>
+      <LinkMedium
+        textLink={"Esqueceu sua senha ?"}
+        onPress={() => navigation.navigate("ForgotPassword")}
+      />
 
-            <Input
-                placeholder={"Usuário ou E-mail"}
-                placeholderTextColor={'#49B3BA'}
-            />
+      <ButtonNormal
+        onPress={() => navigation.navigate("Main")}
+        text={"Entrar"}
+      />
 
-            <Input
-                placeholder={"Senha"}
-                placeholderTextColor={'#49B3BA'}
-                secureTextEntry={true}
-            />
+      <ButtonGoogle
+        onPress={() => navigation.navigate("DoctorConsultation")}
+        text={"Entrar com Google"}
+      />
 
-            <LinkMedium textLink={"Esqueceu sua senha ?"} onPress={() => navigation.navigate("ForgotPassword")} />
-
-            <ButtonNormal onPress={() => navigation.navigate("Main")} text={"Entrar"}/>
-
-            <ButtonGoogle onPress={() => navigation.navigate("Main")} text={"Entrar com Google"}/>
-
-            <LinkAccount onPress={() => navigation.navigate("CreateAccount")}/>
-
-        </Container>
-    )
-}
+      <LinkAccount onPress={() => navigation.navigate("CreateAccount")} />
+    </Container>
+  );
+};

@@ -1,50 +1,54 @@
-import { Modal } from "react-native"
-import { ButtonLargeConfirmModal, ButtonLargeModal, ButtonLargeSelect } from "../Button/Button"
-import { ModalContent, PatientModal } from "../CancellationModal/StyleCancelationModal"
-import { CardCancelLess } from "../Descriptions/Descriptions"
-import { DescriptionModalRecord } from "../Descriptions/StyledDescriptions"
-import { ImageModalRecord } from "../Images/StyleImages"
-import { TitleModal, TitleModalRecord } from "../Title/StyleTitle"
-import { BoxAgeEmailModal } from "./StylePatientAppointmentModal"
-
-
+import { Modal } from "react-native";
+import {
+  ButtonLargeConfirmModal,
+  ButtonLargeModal,
+  ButtonLargeSelect,
+} from "../Button/Button";
+import {
+  ModalContent,
+  PatientModal,
+} from "../CancellationModal/StyleCancelationModal";
+import { CardCancelLess } from "../Descriptions/Descriptions";
+import { DescriptionModalRecord } from "../Descriptions/StyledDescriptions";
+import { ImageModalRecord } from "../Images/StyleImages";
+import { TitleModal, TitleModalRecord } from "../Title/StyleTitle";
+import { BoxAgeEmailModal } from "./StylePatientAppointmentModal";
 
 export const PatientAppointmentModal = ({
-    navigation,
-    visible,
-    setShowModal = null,
-    ...rest
+  navigation,
+  visible,
+  setShowModal = null,
+  ...rest
 }) => {
-    return (
-        <Modal
-            {...rest}
-            visible={visible}
-            transparent={true}
-            animationType="fade">
-                
-            <PatientModal>
+  return (
+    <Modal {...rest} visible={visible} transparent={true} animationType="fade">
+      <PatientModal>
+        <ModalContent>
+          <ImageModalRecord
+            source={require("../../assets/CardRecordPatient(doctorImage).png")}
+          />
 
-                <ModalContent>
+          <TitleModalRecord>Dr Claudio</TitleModalRecord>
 
-                    <ImageModalRecord source={require('../../assets/CardRecordPatient(doctorImage).png')} />
+          <BoxAgeEmailModal>
+            <DescriptionModalRecord>Clínico Geral</DescriptionModalRecord>
+            <DescriptionModalRecord>CRM-15286</DescriptionModalRecord>
+          </BoxAgeEmailModal>
 
-                    <TitleModalRecord>Dr Claudio</TitleModalRecord>
+          <ButtonLargeConfirmModal
+            onPress={() => {
+              navigation.navigate("ConsultLocalization");
+              setShowModal(false);
+            }}
+            text={"Ver Local da Consulta"}
+          />
 
-                    <BoxAgeEmailModal>
-
-                        <DescriptionModalRecord>Clínico Geral</DescriptionModalRecord>
-                        <DescriptionModalRecord>CRM-15286</DescriptionModalRecord>
-
-                    </BoxAgeEmailModal>
-
-                    <ButtonLargeConfirmModal onPress={() => { navigation.navigate("ConsultLocalization") }} text={"Ver Local da Consulta"} />
-
-                    <CardCancelLess onPressCancel={() => setShowModal(false)} text={"Cancelar"} />
-
-                </ModalContent>
-
-            </PatientModal>
-
-        </Modal>
-    )
-}
+          <CardCancelLess
+            onPressCancel={() => setShowModal(false)}
+            text={"Cancelar"}
+          />
+        </ModalContent>
+      </PatientModal>
+    </Modal>
+  );
+};

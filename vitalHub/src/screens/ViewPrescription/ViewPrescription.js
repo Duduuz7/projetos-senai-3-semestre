@@ -6,7 +6,7 @@ import { ViewImage } from "../../components/Images/StyleImages"
 import { HighInputBox, HighInputBoxGrey, InputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
 import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
-import { Line, TitleImage } from "./Style"
+import { Line, TitleImage } from "./style"
 
 export const ViewPrescription = ({ navigation }) => {
     return (

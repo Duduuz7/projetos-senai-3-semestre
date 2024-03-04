@@ -1,10 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const TextBar = styled.Text`
-    color: #607EC5;
-    font-size: 12px;
-    font-family: Quicksand_500Medium;
-`
+  color: #607ec5;
+  font-size: 12px;
+  font-family: Quicksand_500Medium;
+`;
 
 // export const TextBarNormal = styled.Text`
 //     color: #595663;
@@ -13,10 +13,12 @@ export const TextBar = styled.Text`
 // `
 
 export const BarContent = styled.SafeAreaView`
-    flex-direction: row;
-    margin-top: 22px;
-    margin-left: 270px;
-    gap: 5px;
-    width: 40px;
-    height: 60px;
-`
+  flex-direction: row;
+  /* margin-top: 25px; */
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  /* height: 60px; */
+  /* margin-bottom: 50px; */
+`;
