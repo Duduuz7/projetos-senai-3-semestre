@@ -13,9 +13,7 @@ export const ForgotPassword = ({ navigation }) => {
 
         <Container>
 
-             
-
-            <Seta source={require('../../assets/Seta.png')} />
+            {/* <Seta source={require('../../assets/Seta.png')} /> */}
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 

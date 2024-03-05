@@ -1,14 +1,14 @@
 import { BlockedButton, ButtonNormal } from "../../components/Button/Button"
 import { BoxAgeEmail, Container, ScrollContainer } from "../../components/Container/StyleContainer"
-import { DescriptionPassword } from "../../components/Descriptions/Descriptions"
-import {  CancelButtonRecords } from "../../components/Descriptions/StyledDescriptions"
+import { DescriptionPassword, RecordsCancelButton } from "../../components/Descriptions/Descriptions"
+import { CancelButtonRecords } from "../../components/Descriptions/StyledDescriptions"
 import { HighInputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
 import { ImagemPerfilPaciente } from "../../components/Images/StyleImages"
 import { TitleProfile } from "../../components/Title/StyleTitle"
 
 
 
-export const MedicalRecords = () => {
+export const MedicalRecords = ({ navigation }) => {
     return (
 
         <ScrollContainer>
@@ -55,11 +55,15 @@ export const MedicalRecords = () => {
                     fieldWidth={90}
                 />
 
-                <ButtonNormal text={"Salvar"}/>
+                <ButtonNormal text={"Salvar"} />
 
-                <BlockedButton text={"Editar"}/>
+                <BlockedButton text={"Editar"} />
 
-                <CancelButtonRecords>Cancelar</CancelButtonRecords>
+                <RecordsCancelButton onPress={() => {
+                    navigation.replace("DoctorMain");
+                }}
+                    text={"Cancelar"}
+                />
 
             </Container>
 

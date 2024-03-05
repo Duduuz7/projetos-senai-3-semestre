@@ -1,5 +1,5 @@
 import { ViewBoxCode } from "../Container/StyleContainer";
-import {CancelBackMargin, CancelCard, CancelLessMargin, CancelLocal, DescripritionDoctor, DescripritionEmail, DescripritionForgot, EmailText, ResendCode, SeeMedicalRecord, SmallDescriptionModal, SmallDescriptionModal2 } from "./StyledDescriptions";
+import {CancelBackMargin, CancelButtonRecords, CancelCard, CancelLessMargin, CancelLocal, DescripritionDoctor, DescripritionEmail, DescripritionForgot, EmailText, ResendCode, SeeMedicalRecord, SmallDescriptionModal, SmallDescriptionModal2 } from "./StyledDescriptions";
 
 export const DescriptionPassword = ({ description }) => {
 
@@ -117,6 +117,16 @@ export const TextBarNormal = ({ onPress, text }) => {
     return(
 
         <SmallDescriptionModal onPress={onPress}>{text}</SmallDescriptionModal>
+
+    )
+
+}
+
+export const RecordsCancelButton = ({ onPress, text }) => {
+
+    return(
+
+        <CancelButtonRecords onPress={onPress}>{text}</CancelButtonRecords>
 
     )
 

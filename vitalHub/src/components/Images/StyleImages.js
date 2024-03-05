@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const Logo = styled.Image`
     width: 214px;
     height: 120px;
-    margin: 80px 0px;
+    margin-top: 175px;
+    margin-bottom: 28px;
+    
 `
 export const LogoCreateAccount = styled.Image`
     margin-bottom: 20px;

@@ -11,7 +11,7 @@ import { useState } from "react"
 import { ConfirmAppointmentModal } from "../../components/ConfirmAppointmentModal/ConfirmAppointmentModal"
 
 
-export const SelectDate = ( {navigation} ) => {
+export const SelectDate = ({ navigation }) => {
     const [showModal, setShowModal] = useState(false);
     return (
 
@@ -32,7 +32,9 @@ export const SelectDate = ( {navigation} ) => {
             <BoxButtons>
                 <ButtonLarge onPress={() => setShowModal(true)} text={'Confirmar'} />
 
-                <CardCancelLess text={"Cancelar"} />
+                <CardCancelLess onPressCancel={() => {
+                    navigation.navigate("SelectDoctor");
+                }} text={"Cancelar"} />
             </BoxButtons>
 
             <ConfirmAppointmentModal

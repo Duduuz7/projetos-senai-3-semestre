@@ -15,7 +15,7 @@ export const RedefinePassword = () => {
         <Container>
             <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
-            <Close source={require('../../assets/x-top-screen.png')}/>
+            {/* <Close source={require('../../assets/x-top-screen.png')}/> */}
 
             <Logo source={require('../../assets/VitalHub_Logo1.png')} />
 

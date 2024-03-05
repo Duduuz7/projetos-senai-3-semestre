@@ -4,9 +4,10 @@ import { TitleSelect } from "../../components/Title/StyleTitle"
 import { CardSelectDoctor } from "../../components/Cards/Cards"
 import { ButtonLarge, ButtonLargeSelect } from "../../components/Button/Button"
 import { CancelLessMargin } from "../../components/Descriptions/StyledDescriptions"
+import { CardCancelLessLocal } from "../../components/Descriptions/Descriptions"
 
 
-export const SelectDoctor = ({navigation}) => {
+export const SelectDoctor = ({ navigation }) => {
 
     const image = require("../../assets/ImageCard.png");
     const dataItens = [
@@ -50,7 +51,10 @@ export const SelectDoctor = ({navigation}) => {
 
             <ButtonLargeSelect onPress={() => { navigation.navigate("SelectDate") }} text={"Continuar"} />
 
-            <CancelLessMargin>Cancelar</CancelLessMargin>
+            <CardCancelLessLocal
+                onPressCancel={() => navigation.replace("Main")}
+                text={"Cancelar"}
+            />
 
         </Container>
 

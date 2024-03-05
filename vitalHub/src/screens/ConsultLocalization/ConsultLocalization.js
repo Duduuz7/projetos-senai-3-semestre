@@ -46,10 +46,11 @@ export const ConsultLocalization = ({ navigation }) => {
 
       <CardCancelLessLocal
         onPressCancel={() => {
-          navigation.navigate("Main");
+          navigation.replace("Main");
         }}
         text={"Voltar"}
       />
+      
     </Container>
   );
 };

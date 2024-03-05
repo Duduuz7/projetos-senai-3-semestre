@@ -89,9 +89,10 @@ export const SelectCLinic = ({ navigation }) => {
       />
 
       <CardCancelLess
-        onPressCancel={() => navigation.navigate("Main")}
+        onPressCancel={() => navigation.replace("Main")}
         text={"Cancelar"}
       />
+      
     </Container>
   );
 };

@@ -9,6 +9,11 @@ import { ButtonGoogle, ButtonNormal } from "../../components/Button/Button";
 import { StatusBar } from "react-native";
 
 export const Login = ({ navigation }) => {
+
+  async function Login() {
+    navigation.replace("Main")
+  }
+
   return (
     <Container>
       <StatusBar
@@ -38,16 +43,16 @@ export const Login = ({ navigation }) => {
       />
 
       <ButtonNormal
-        onPress={() => navigation.navigate("Main")}
+        onPress={(e) => Login()}
         text={"Entrar"}
       />
 
       <ButtonGoogle
-        onPress={() => navigation.navigate("DoctorConsultation")}
+        onPress={() => navigation.replace("DoctorMain")}
         text={"Entrar com Google"}
       />
 
-      <LinkAccount onPress={() => navigation.navigate("CreateAccount")} />
+      <LinkAccount onPress={() => navigation.replace("CreateAccount")} />
     </Container>
   );
 };

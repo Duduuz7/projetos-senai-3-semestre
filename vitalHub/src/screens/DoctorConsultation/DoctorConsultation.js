@@ -14,7 +14,7 @@ import { AppointmentModal } from "../../components/AppointmentModal/AppointmentM
 
 
 
-export const DoctorConsultation = () => {
+export const DoctorConsultation = ({ navigation }) => {
 
     //STATE PARA O ESTADO DOS CARDS FLATLIST, BOTOES FILTRO
     const [selected, setSelected] = useState({
@@ -121,7 +121,7 @@ export const DoctorConsultation = () => {
             <FlatContainer
                 data={data}
                 renderItem={({ item }) =>
-                    <Card hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointment={() => setShowModalAppointment(true)} />}
+                    <Card navigation={navigation} hour={item.hour} name={item.name} age={item.age} routine={item.routine} url={image} status={item.status} onPressCancel={() => setShowModalCancel(true)} onPressAppointment={() => setShowModalAppointment(true)} />}
 
                 keyExtractor={item => item.id}
 
@@ -135,6 +135,7 @@ export const DoctorConsultation = () => {
             />
 
             <AppointmentModal
+                navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />
