@@ -6,12 +6,14 @@ import { CardCancelLessLocal } from "../../components/Descriptions/Descriptions"
 import { AgeTextCard } from "../../components/Descriptions/StyledDescriptions";
 import { MapImage } from "../../components/Images/StyleImages";
 import { InputBox } from "../../components/InputBox/InputBox";
+import Maps from "../../components/Maps/Maps";
 import { Title, TitleLocalization } from "../../components/Title/StyleTitle";
 
 export const ConsultLocalization = ({ navigation }) => {
   return (
     <Container>
-      <MapImage source={require("../../assets/MapImage.png")} />
+      
+      <Maps/>
 
       <TitleLocalization>Clínica Natureh</TitleLocalization>
 
