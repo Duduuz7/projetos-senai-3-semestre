@@ -2,14 +2,21 @@ import { SendButton } from "../../components/Button/Button"
 import { ButtonSend } from "../../components/Button/StyleButton"
 import { BoxAgeEmail, BoxBtn, BoxDescription, BoxViewImageImport, Container, ScrollContainer, ViewImageImport } from "../../components/Container/StyleContainer"
 import { CardBackLess, CardCancel, CardCancelLess, DescriptionDoc, DescriptionPassword } from "../../components/Descriptions/Descriptions"
-import { ViewImage } from "../../components/Images/StyleImages"
+import { ImagePrescription, ViewImage } from "../../components/Images/StyleImages"
 import { HighInputBox, HighInputBoxGrey, InputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
 import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
 import { Line, TitleImage } from "./Style"
 
+import * as MediaLibrary from "expo-media-library"
+
+import { useRoute } from '@react-navigation/native';
 
 export const ViewPrescription = ({ navigation }) => {
+
+    const route = useRoute();
+    // const { fotoGaleria } = route.params;
+
     return (
         <>
             <ScrollContainer>
@@ -52,21 +59,22 @@ export const ViewPrescription = ({ navigation }) => {
                     />
 
                     <BoxViewImageImport>
-                        
+
                         <Label textLabel={"Exames médicos"} />
 
-                        <ViewImageImport>
-                            <TitleImage>{"[ ! ] Nenhuma foto informada"}</TitleImage>
-                        </ViewImageImport>
+                        <ImagePrescription
+                            // source={{uri : fotoGaleria.uri }}
+                            defaultSource={require('../../assets/ney.webp')}
+                        />
 
                     </BoxViewImageImport>
 
-                    <BoxBtn>
-                        <SendButton text={"Enviar"} />
-                        <CardCancel text={"Cancelar"} />
+                    <BoxBtn>    
+                        <SendButton onPress={() => { navigation.navigate("Camera") }} text={"Enviar"} />
+                        <CardCancel onPressCancel={() => { navigation.replace("Main") }} text={"Cancelar"} />
                     </BoxBtn>
 
-                    <Line/>
+                    <Line />
 
                     <HighInputBoxGrey
                         // fieldHeight={350}
@@ -76,7 +84,7 @@ export const ViewPrescription = ({ navigation }) => {
                         fieldWidth={90}
                     />
 
-                    <CardBackLess onPressCancel={() => { navigation.navigate("PatientConsultation") }} text={"Voltar"}/>
+                    <CardBackLess onPressCancel={() => { navigation.navigate("PatientConsultation") }} text={"Voltar"} />
 
                 </Container>
 

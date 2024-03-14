@@ -29,10 +29,13 @@ import { ConsultLocalization } from "./src/screens/ConsultLocalization/ConsultLo
 import { ViewPrescription } from "./src/screens/ViewPrescription/ViewPrescription";
 import Splash from "./src/screens/Splash/Splash";
 import { DoctorMain, Main } from "./src/components/Main/Main";
+import Camera from "./src/components/Camera/Camera";
 
 const Stack = createNativeStackNavigator();
 
+
 export default function App() {
+
   let [fontsLoaded, fontError] = useFonts({
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
@@ -169,6 +172,11 @@ export default function App() {
           name="ViewPrescription"
           component={ViewPrescription}
           options={{ title: "ViewPrescription" }}
+        />
+        <Stack.Screen
+          name="Camera"
+          component={Camera}
+          options={{ title: "Camera" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
