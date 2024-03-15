@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { SendButton } from "../../components/Button/Button"
 import { ButtonSend } from "../../components/Button/StyleButton"
 import { BoxAgeEmail, BoxBtn, BoxDescription, BoxViewImageImport, Container, ScrollContainer, ViewImageImport } from "../../components/Container/StyleContainer"
@@ -6,16 +7,21 @@ import { ImagePrescription, ViewImage } from "../../components/Images/StyleImage
 import { HighInputBox, HighInputBoxGrey, InputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
 import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
-import { Line, TitleImage } from "./Style"
+import { ImportImages, Line, TitleImage } from "./Style"
 
 import * as MediaLibrary from "expo-media-library"
 
-import { useRoute } from '@react-navigation/native';
+// import { useRoute } from '@react-navigation/native';
 
-export const ViewPrescription = ({ navigation }) => {
+export const ViewPrescription = ({ navigation, route }) => {
 
-    const route = useRoute();
-    // const { fotoGaleria } = route.params;
+    // const { photoUri } = route.params;
+
+    useEffect(() => {
+        // console.log(photoUri)
+        console.log("sada") 
+        console.log(route.params)
+    }, [route.params])
 
     return (
         <>
@@ -62,14 +68,13 @@ export const ViewPrescription = ({ navigation }) => {
 
                         <Label textLabel={"Exames médicos"} />
 
-                        <ImagePrescription
-                            // source={{uri : fotoGaleria.uri }}
-                            defaultSource={require('../../assets/ney.webp')}
-                        />
+                        <ImportImages>
+                            {route.params ? <ImagePrescription source={{ uri : route.params }} /> : <ImagePrescription source={require("../../assets/InsertExams.png")} />}
+                        </ImportImages>
 
                     </BoxViewImageImport>
 
-                    <BoxBtn>    
+                    <BoxBtn>
                         <SendButton onPress={() => { navigation.navigate("Camera") }} text={"Enviar"} />
                         <CardCancel onPressCancel={() => { navigation.replace("Main") }} text={"Cancelar"} />
                     </BoxBtn>

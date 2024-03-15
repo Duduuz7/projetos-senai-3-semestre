@@ -24,6 +24,13 @@ export default function Cam({ navigation }) {
 
     const [fotoGaleria, setFotoGaleria] = useState(null)
 
+
+    const [uriCameraCapture, setUriCameraCapture] = useState(null)
+
+    const [showCameraModal, setShowCameraModal] = useState(false)
+
+
+
     useEffect(() => {
 
         (async () => {
@@ -36,20 +43,17 @@ export default function Cam({ navigation }) {
 
     }, [])
 
+    
+
     async function CapturePhoto() {
         if (cameraRef) {
 
             const photo = await cameraRef.current.takePictureAsync();
 
-
-
             setPhoto(photo.uri)
 
             setOpenModal(true)
-
-            console.log(photo)
-            
-        //    navigation.navigate('ViewPrescription', { fotoGaleria.id });
+          
 
         }
     }
@@ -64,15 +68,17 @@ export default function Cam({ navigation }) {
 
     async function UploadPhoto() {
 
-        await MediaLibrary.createAssetAsync(photo)
-            .then((response) => {
-                setOpenModal(false)
-                setFotoGaleria(response)
-                alert("Foto salva com sucesso !!!")
-            }).catch(error => {
-                alert("Nao foi possível processar a foto !!!")
-            })
-
+      if (photo) {
+        await MediaLibrary.createAssetAsync(photo).then(() => {
+          console.log(photo);
+           Alert.alert('Sucesso', ('foto salva na galeria'));
+          
+          navigation.navigate("ViewPrescription", { photoUri: photo.uri });
+        }).catch(error => {
+          // alert("erro ao processar" + error);
+          console.log(error)
+        });
+      }
     }
 
     return (
