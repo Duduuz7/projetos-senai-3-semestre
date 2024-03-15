@@ -20,7 +20,7 @@ width: 358px;
 border-radius: 10px;
 margin-top: 10px;
 margin-bottom: 12px;
-background-color: #E6E6E6;
+background-color: #F5F3F3;
 border-color: transparent;
 font-family: "MontserratAlternates_500Medium";
 align-items: center;

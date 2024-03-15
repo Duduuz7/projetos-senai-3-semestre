@@ -2,12 +2,17 @@ import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-na
 import { Camera, CameraType } from 'expo-camera';
 import { useEffect, useRef, useState } from 'react';
 
+import { PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
+
 
 import * as MediaLibrary from "expo-media-library"
 
 import { FontAwesome } from "@expo/vector-icons"
 
 import { Ionicons } from '@expo/vector-icons';
+import { ButtonLargeConfirmModal } from '../Button/Button';
+import { CancelCard } from '../Descriptions/StyledDescriptions';
+import { CardCancel, CardCancelLess } from '../Descriptions/Descriptions';
 
 
 export default function Cam({ navigation }) {
@@ -22,14 +27,7 @@ export default function Cam({ navigation }) {
 
     const [flashMode, setFlashMode] = useState(Camera.Constants.FlashMode.off);
 
-    const [fotoGaleria, setFotoGaleria] = useState(null)
-
-
-    const [uriCameraCapture, setUriCameraCapture] = useState(null)
-
-    const [showCameraModal, setShowCameraModal] = useState(false)
-
-
+    const [zoom, setZoom] = useState(0)
 
     useEffect(() => {
 
@@ -43,18 +41,15 @@ export default function Cam({ navigation }) {
 
     }, [])
 
-    
+
 
     async function CapturePhoto() {
         if (cameraRef) {
-
             const photo = await cameraRef.current.takePictureAsync();
 
             setPhoto(photo.uri)
 
             setOpenModal(true)
-          
-
         }
     }
 
@@ -68,96 +63,117 @@ export default function Cam({ navigation }) {
 
     async function UploadPhoto() {
 
-      if (photo) {
-        await MediaLibrary.createAssetAsync(photo).then(() => {
-          console.log(photo);
-           Alert.alert('Sucesso', ('foto salva na galeria'));
-          
-          navigation.navigate("ViewPrescription", { photoUri: photo.uri });
-        }).catch(error => {
-          // alert("erro ao processar" + error);
-          console.log(error)
-        });
-      }
+        //   if (photo) {
+        //     await MediaLibrary.createAssetAsync(photo).then(() => {
+        //       console.log(photo);
+
+        //     //    Alert.alert('Sucesso', ('foto salva na galeria'));
+
+        //       navigation.navigate("ViewPrescription", { photoUri: photo.uri });
+        //     }).catch(error => {
+        //       // alert("erro ao processar" + error);
+        //       console.log(error)
+
+
+        //     });
+
+        console.log(photo)
+        navigation.navigate("ViewPrescription", { photoUri: photo });
+
     }
 
+    const changeZoom = (event) => {
+        if (event.nativeEvent.scale > 1 && zoom < 1) {
+            setZoom(zoom + 0.002);
+        }
+        if (event.nativeEvent.scale < 1 && zoom > 0) {
+            setZoom(zoom - 0.02);
+        }
+    };
+
     return (
-        <View style={styles.container}>
-            <Camera
-                ref={cameraRef}
-                style={styles.camera}
-                type={tipoCamera}
-                ratio='16:9'
-                autoFocus={true}
-                whiteBalance={'shadow'}
-                flashMode={flashMode}
-            >
+        <GestureHandlerRootView style={{flex: 1}}>
+            <PinchGestureHandler onGestureEvent={(event) => {changeZoom(event)}}>
+                <View style={styles.container}>
 
-                <View style={styles.containerClose} >
-                    <FontAwesome name="close" size={23} color={"#fff"} />
-                </View>
-
-                <View style={styles.viewFlip}>
-
-                    <TouchableOpacity
-                        style={styles.btnFlip}
-                        onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)}
+                    <Camera
+                        ref={cameraRef}
+                        zoom={zoom}
+                        style={styles.camera}
+                        type={tipoCamera}
+                        ratio='16:9'
+                        autoFocus={true}
+                        whiteBalance={'shadow'}
+                        flashMode={flashMode}
                     >
 
-                        <Ionicons name="camera-reverse" size={32} color="white" />
+                        <TouchableOpacity style={styles.btnClear} onPress={() => { navigation.replace("ViewPrescription") }} >
+                            <FontAwesome name="close" size={23} color={"#fff"} />
+                        </TouchableOpacity>
 
-                    </TouchableOpacity>
+                        <View style={styles.viewFlip}>
 
-                    <TouchableOpacity style={styles.btnCapture} onPress={() => CapturePhoto()}>
-                        <FontAwesome name="camera" size={23} color={"#fff"} />
-                    </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.btnFlip}
+                                onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)}
+                            >
 
-                    <TouchableOpacity
-                        style={styles.btnFlash}
-                        onPress={() => setFlashMode(flashMode === Camera.Constants.FlashMode.off
-                            ? Camera.Constants.FlashMode.on
-                            : Camera.Constants.FlashMode.off)}
-                    >
+                                <Ionicons name="camera-reverse" size={32} color="white" />
 
-                        <FontAwesome name="flash" size={23} color={"#fff"} />
-                    </TouchableOpacity>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={styles.btnCapture} onPress={() => CapturePhoto()}>
+                                <FontAwesome name="camera" size={23} color={"#fff"} />
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                style={styles.btnFlash}
+                                onPress={() => setFlashMode(flashMode === Camera.Constants.FlashMode.off
+                                    ? Camera.Constants.FlashMode.on
+                                    : Camera.Constants.FlashMode.off)}
+                            >
+
+                                <FontAwesome name="flash" size={23} color={"#fff"} />
+                            </TouchableOpacity>
 
 
 
-                    <Modal animationType='slide' transparent={false} visible={openModal}>
+                            <Modal animationType='slide' transparent={false} visible={openModal}>
 
-                        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", margin: 20 }}>
+                                <View style={{ flex: 1, justifyContent: "center", alignItems: "center", margin: 20 }}>
 
-                            <View stye={{ margin: 10, flexDirection: "row" }}>
-                                {/* Botoes de controle */}
-                            </View>
+                                    <View stye={{ margin: 10, flexDirection: "row" }}>
+                                        {/* Botoes de controle */}
+                                    </View>
 
-                            <Image
-                                style={{ width: "100%", height: 500, borderRadius: 15 }}
-                                source={{ uri: photo }}
-                            />
+                                    <Image
+                                        style={{ width: "95%", height: 600, borderRadius: 12, marginTop: 35, }}
+                                        source={{ uri: photo }}
+                                    />
 
-                            <View style={{ margin: 10, flexDirection: 'row' }}>
+                                    <View style={{ margin: 10, flexDirection: 'column', width: "95%", gap: 2,}}>
 
-                                {/* Botoes de controle */}
-                                <TouchableOpacity style={styles.btnClear} onPress={() => ClearPhoto()}>
+                                        {/* Botoes de controle */}
+                                        {/* <TouchableOpacity style={styles.btnClear} onPress={() => ClearPhoto()}>
                                     <FontAwesome name="trash" size={25} color={"#ff0000"} />
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
 
-                                <TouchableOpacity style={styles.btnUpload} onPress={() => UploadPhoto()}>
-                                    <FontAwesome name="save" size={25} color={"#121212"} />
-                                </TouchableOpacity>
+                                        <ButtonLargeConfirmModal text={"Confirmar"} onPress={() => UploadPhoto()} />
 
-                            </View>
+                                        <CardCancelLess onPressCancel={() => navigation.replace("Camera")} text={"Refazer"} />
+
+                                    </View>
+
+                                </View>
+                            </Modal>
+
 
                         </View>
-                    </Modal>
 
-
+                    </Camera>
                 </View>
-
-            </Camera>
-        </View>
+            </PinchGestureHandler>
+        </GestureHandlerRootView>
     );
 }
 
@@ -178,7 +194,10 @@ const styles = StyleSheet.create({
         backgroundColor: "trasparent",
         flexDirection: "row",
         alignItems: "flex-end",
-        justifyContent: "center",
+        justifyContent: "space-between",
+        marginRight: 30,
+        marginLeft: 30,
+        marginBottom: 5
     },
     btnFlip: {
         padding: 20,
@@ -212,6 +231,7 @@ const styles = StyleSheet.create({
     btnClear: {
         backgroundColor: 'transparent',
         padding: 20,
+        marginTop: 35,
 
         alignItems: "center",
         justifyContent: "center",

@@ -3,7 +3,7 @@ import { SendButton } from "../../components/Button/Button"
 import { ButtonSend } from "../../components/Button/StyleButton"
 import { BoxAgeEmail, BoxBtn, BoxDescription, BoxViewImageImport, Container, ScrollContainer, ViewImageImport } from "../../components/Container/StyleContainer"
 import { CardBackLess, CardCancel, CardCancelLess, DescriptionDoc, DescriptionPassword } from "../../components/Descriptions/Descriptions"
-import { ImagePrescription, ViewImage } from "../../components/Images/StyleImages"
+import { ImagePrescription, ImagePrescriptionNull, ViewImage } from "../../components/Images/StyleImages"
 import { HighInputBox, HighInputBoxGrey, InputBox, LargeInputTextBox } from "../../components/InputBox/InputBox"
 import { Label } from "../../components/Label/Label"
 import { TitleProfile } from "../../components/Title/StyleTitle"
@@ -21,7 +21,7 @@ export const ViewPrescription = ({ navigation, route }) => {
         // console.log(photoUri)
         console.log("sada") 
         console.log(route.params)
-    }, [route.params])
+    }, [route])
 
     return (
         <>
@@ -69,7 +69,7 @@ export const ViewPrescription = ({ navigation, route }) => {
                         <Label textLabel={"Exames médicos"} />
 
                         <ImportImages>
-                            {route.params ? <ImagePrescription source={{ uri : route.params }} /> : <ImagePrescription source={require("../../assets/InsertExams.png")} />}
+                            {route.params ? <ImagePrescription source={{ uri : route.params.photoUri }} /> : <TitleImage>{"[ ! ] Nenhuma foto informada"}</TitleImage>}
                         </ImportImages>
 
                     </BoxViewImageImport>
