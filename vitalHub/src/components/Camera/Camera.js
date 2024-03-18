@@ -10,9 +10,11 @@ import * as MediaLibrary from "expo-media-library"
 import { FontAwesome } from "@expo/vector-icons"
 
 import { Ionicons } from '@expo/vector-icons';
+
+import { Entypo } from '@expo/vector-icons';
+
 import { ButtonLargeConfirmModal } from '../Button/Button';
-import { CancelCard } from '../Descriptions/StyledDescriptions';
-import { CardCancel, CardCancelLess } from '../Descriptions/Descriptions';
+import { CardCancelLess } from '../Descriptions/Descriptions';
 
 
 export default function Cam({ navigation }) {
@@ -78,7 +80,7 @@ export default function Cam({ navigation }) {
         //     });
 
         console.log(photo)
-        navigation.navigate("ViewPrescription", { photoUri: photo });
+        navigation.navigate("ViewPrescription", { photoUri: photo, clearPhoto: ClearPhoto });
 
     }
 
@@ -92,8 +94,8 @@ export default function Cam({ navigation }) {
     };
 
     return (
-        <GestureHandlerRootView style={{flex: 1}}>
-            <PinchGestureHandler onGestureEvent={(event) => {changeZoom(event)}}>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <PinchGestureHandler onGestureEvent={(event) => { changeZoom(event) }}>
                 <View style={styles.container}>
 
                     <Camera
@@ -123,7 +125,8 @@ export default function Cam({ navigation }) {
                             </TouchableOpacity>
 
                             <TouchableOpacity style={styles.btnCapture} onPress={() => CapturePhoto()}>
-                                <FontAwesome name="camera" size={23} color={"#fff"} />
+                                <Entypo name="circle" size={45} color="#404040" />
+                                {/* #E8E8E8 */}
                             </TouchableOpacity>
 
                             <TouchableOpacity
@@ -133,7 +136,8 @@ export default function Cam({ navigation }) {
                                     : Camera.Constants.FlashMode.off)}
                             >
 
-                                <FontAwesome name="flash" size={23} color={"#fff"} />
+                                {flashMode ? <Ionicons name="flash" size={23} color="white" /> : <Ionicons name="flash-off" size={24} color="white" />}
+
                             </TouchableOpacity>
 
 
@@ -151,7 +155,7 @@ export default function Cam({ navigation }) {
                                         source={{ uri: photo }}
                                     />
 
-                                    <View style={{ margin: 10, flexDirection: 'column', width: "95%", gap: 2,}}>
+                                    <View style={{ margin: 10, flexDirection: 'column', width: "95%", gap: 2, }}>
 
                                         {/* Botoes de controle */}
                                         {/* <TouchableOpacity style={styles.btnClear} onPress={() => ClearPhoto()}>
@@ -209,10 +213,15 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     btnCapture: {
-        padding: 20,
+        // padding: 20,
         margin: 20,
-        borderRadius: 20,
-        // backgroundColor: "#121212",
+        borderRadius: 50,
+        backgroundColor: "white",
+
+        width: 55,
+        height: 55,
+
+        marginBottom: 22,
 
         alignItems: "center",
         justifyContent: "center",

@@ -76,7 +76,7 @@ export const ViewPrescription = ({ navigation, route }) => {
 
                     <BoxBtn>
                         <SendButton onPress={() => { navigation.navigate("Camera") }} text={"Enviar"} />
-                        <CardCancel onPressCancel={() => { navigation.replace("Main") }} text={"Cancelar"} />
+                        <CardCancel onPressCancel={() => {navigation.replace("Main") }} text={"Cancelar"} />
                     </BoxBtn>
 
                     <Line />
